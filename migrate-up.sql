@@ -16,7 +16,7 @@ CREATE TABLE "person"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   "first_name" VARCHAR(256) NOT NULL,
   "last_name" VARCHAR(256) NOT NULL,
-  "social_security" VARCHAR(256) NOT NULL,
+  "social_security" VARCHAR(256) UNIQUE NOT NULL,
   "address" VARCHAR(256) NOT NULL,
   "email" VARCHAR(256) NOT NULL,
   "phone" VARCHAR(256) NOT NULL
@@ -24,8 +24,9 @@ CREATE TABLE "person"(
 
 CREATE TABLE "student"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  "contact_person_id" uuid NOT NULL,
-  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE,
+
+  "contact_person_id" uuid,
+  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE
 ) INHERITS (person);
 
 CREATE TABLE "sibling"(
@@ -51,7 +52,7 @@ CREATE TABLE "instrument"(
 
 CREATE TABLE "instructor"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  "contact_person_id" uuid NOT NULL,
+  "contact_person_id" uuid,
   CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE
 ) INHERITS (person);
 
@@ -150,3 +151,18 @@ CREATE TABLE "ensemble_lesson_instrument"(
   CONSTRAINT fk_ensemble_lesson_id FOREIGN KEY (ensemble_lesson_id) REFERENCES "ensemble_lesson"(id) ON DELETE CASCADE,
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE
 );
+
+CREATE OR REPLACE FUNCTION check_instrument_rent_limit()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF (SELECT COUNT(*) FROM instrument WHERE student_id = NEW.student_id) >= 2 THEN
+    RAISE EXCEPTION 'Student cannot have more than 2 instruments';
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER check_max_instruments
+    BEFORE UPDATE ON instrument
+    FOR EACH ROW
+    EXECUTE FUNCTION check_instrument_rent_limit();

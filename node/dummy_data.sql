@@ -1,103 +1,700 @@
-INSERT INTO
-  person (
-    id,
-    first_name,
-    last_name,
-    social_security,
-    address,
-    email,
-    phone
-  )
-VALUES
-  (
-    '0de9ef4b-a13a-4bce-a28b-902fa35040f3',
-    'Juliana',
-    'Kunze',
-    '769183651',
-    '94068 Patricia Mission',
-    'Magnolia.Leannon21@gmail.com',
-    '388-655-7741 x81868'
-  );
-
-INSERT INTO
-  instructor (id, contact_person_id)
-VALUES
-  (
-    '2eb49bd1-6068-4c9c-902d-ac4300abd56f',
-    '0de9ef4b-a13a-4bce-a28b-902fa35040f3'
-  );
-
-INSERT INTO
-  student (
-    id,
-    max_instrument_rent_amount,
-    contact_person_id
-  )
-VALUES
-  (
-    '6ece213a-ce85-448f-a7a3-e1f5879dac2c',
-    451,
-    '0de9ef4b-a13a-4bce-a28b-902fa35040f3'
-  );
-
-INSERT INTO
-  instrument_type (id, name)
-VALUES
-  (
-    '3e0e0f0a-54c6-40ec-baf6-b150d7ebafc1',
-    'Refined Cotton Chips'
-  );
-
-INSERT INTO
-  price (id, class_type, level, sibling_discount, cost)
-VALUES
-  (
-    'e5e039f9-e23d-4bd0-8498-2cacbc55cfa8',
-    'Basic',
-    'Beginner',
-    3,
-    341
-  );
-
-INSERT INTO
-  time_slot (id, start_time, end_time)
-VALUES
-  (
-    'd3f849f8-b887-4bd7-b6c9-ef4d34102a7f',
-    '2023-11-16T09:12:51.271Z',
-    '2023-11-17T15:27:59.353Z'
-  );
-
-INSERT INTO
-  ensemble_lesson (
-    id,
-    level,
-    min_students,
-    max_students,
-    genre,
-    price_id,
-    instructor_id,
-    time_slot_id
-  )
-VALUES
-  (
-    '61f15435-285d-49de-b326-671d7b8b71f1',
-    'Intermediate',
-    1,
-    21,
-    'Funk',
-    'e5e039f9-e23d-4bd0-8498-2cacbc55cfa8',
-    '2eb49bd1-6068-4c9c-902d-ac4300abd56f',
-    'd3f849f8-b887-4bd7-b6c9-ef4d34102a7f'
-  );
-
-INSERT INTO
-  ensemble_lesson_student (id, ensemble_lesson_id, student_id, price, state)
-VALUES
-  (
-    '34b0d786-d161-4ae2-afc8-ac28f852a08c',
-    '61f15435-285d-49de-b326-671d7b8b71f1',
-    '6ece213a-ce85-448f-a7a3-e1f5879dac2c',
-    12,
-    'active'
-  );
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('36e5c617-fe62-4ba0-91ee-dfdc06794bd0', 'Mervin', 'Johns', '271297835', '51568 Simeon Lakes', 'Caitlyn.Howell@yahoo.com', '1-998-361-2975');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('36e5c617-fe62-4ba0-91ee-dfdc06794bd0', 291, '36e5c617-fe62-4ba0-91ee-dfdc06794bd0');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('2b463eeb-d962-4aa0-9bdd-79a307970f4f', 'Dolly', 'Rath', '868502159', '3947 Von Loaf', 'Rosalia44@gmail.com', '476.536.5363 x0705');
+INSERT INTO instructor (id, contact_person_id) VALUES ('2b463eeb-d962-4aa0-9bdd-79a307970f4f', '2b463eeb-d962-4aa0-9bdd-79a307970f4f');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('6e1e8656-2fb9-446b-ba38-effa7b0da033', 'Pants', 'Representative', 59, 108);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('5d4c3ccc-be80-40a3-826c-93d8744b675c', '2023-11-16T10:56:58.415Z', '2023-11-17T15:40:25.556Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1dc83147-dd45-4edb-ab8e-9032d5a47984', 'Kacey', 'Stokes', '130501724', '6116 Nannie Views', 'Monserrat29@gmail.com', '360.620.1279');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('1dc83147-dd45-4edb-ab8e-9032d5a47984', 168, '1dc83147-dd45-4edb-ab8e-9032d5a47984');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b51aa168-fa75-46cd-ab8d-a182820d8b6e', 'Missouri', 'Lubowitz', '597166605', '427 Ethelyn Islands', 'Ray.Larson@hotmail.com', '(824) 454-4910 x80536');
+INSERT INTO instructor (id, contact_person_id) VALUES ('b51aa168-fa75-46cd-ab8d-a182820d8b6e', 'b51aa168-fa75-46cd-ab8d-a182820d8b6e');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('708d06ed-6649-4b84-8a9b-7454108874cb', 'Hat', 'Producer', 91, 416);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('b450fae5-d7fa-44a1-8b6e-a5967ead23bc', '2023-11-17T08:10:13.447Z', '2023-11-17T13:39:46.845Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('de5e672c-25b0-4f94-bcc3-e2da657b9d36', 'Richie', 'Feest', '287786960', '4915 Leffler Fields', 'Reagan15@yahoo.com', '(619) 664-2122 x559');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('de5e672c-25b0-4f94-bcc3-e2da657b9d36', 443, 'de5e672c-25b0-4f94-bcc3-e2da657b9d36');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('3d4e0844-7716-446e-ab40-054b3c8efcf8', 'Anais', 'Satterfield', '345104991', '617 Shields Heights', 'Enola54@hotmail.com', '1-279-581-2505 x4740');
+INSERT INTO instructor (id, contact_person_id) VALUES ('3d4e0844-7716-446e-ab40-054b3c8efcf8', '3d4e0844-7716-446e-ab40-054b3c8efcf8');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('1ecf70fc-3cf9-4efb-ae65-f00f4da649ae', 'Tuna', 'Orchestrator', 97, 538);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('644b4bc5-2039-47bf-b3b9-af83830003a8', '2023-11-16T15:09:52.522Z', '2023-11-18T08:35:32.069Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('08ad3109-2bf5-47b0-890c-da8a577c8e8e', 'Eloise', 'Aufderhar', '446205682', '410 Macejkovic Place', 'Willis_Koelpin@hotmail.com', '(279) 489-9219 x32892');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('08ad3109-2bf5-47b0-890c-da8a577c8e8e', 120, '08ad3109-2bf5-47b0-890c-da8a577c8e8e');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('aa178209-1c86-4604-9785-187bebb8ef1a', 'Alta', 'Hegmann', '810444153', '46775 Javonte Walk', 'Jermaine_Upton@gmail.com', '(589) 252-5595 x5672');
+INSERT INTO instructor (id, contact_person_id) VALUES ('aa178209-1c86-4604-9785-187bebb8ef1a', 'aa178209-1c86-4604-9785-187bebb8ef1a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('83d0d360-819b-486a-9253-149c83fb55a6', 'Hat', 'Director', 24, 898);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('4123896f-aa29-4b65-bbd5-ea7ea98e9ee1', '2023-11-16T12:57:58.743Z', '2023-11-18T00:07:26.668Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('ce7825cc-da12-4fd4-8e18-9a09004f411f', 'Brook', 'Pouros', '915618903', '9776 Giovanny Pike', 'Eldridge_Wolf93@yahoo.com', '(266) 795-6916');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('ce7825cc-da12-4fd4-8e18-9a09004f411f', 479, 'ce7825cc-da12-4fd4-8e18-9a09004f411f');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('351bb338-77ba-4c67-81b6-35478181b59a', 'Bennett', 'Smith', '188664464', '4609 Kenya Wall', 'Alberto_MacGyver@hotmail.com', '(936) 332-0836 x537');
+INSERT INTO instructor (id, contact_person_id) VALUES ('351bb338-77ba-4c67-81b6-35478181b59a', '351bb338-77ba-4c67-81b6-35478181b59a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('7c1665a0-d844-4dd1-b271-9795edc3a3a6', 'Bacon', 'Manager', 6, 362);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('6653b441-3093-45db-a6fc-2ca8b7668878', '2023-11-17T00:49:19.686Z', '2023-11-18T07:14:40.724Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('c8ccc898-e274-4f7d-8178-a29ebd76f967', 'Daisha', 'Beier', '521111246', '24912 Turcotte Viaduct', 'Berniece_Murphy54@yahoo.com', '1-608-897-5453');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('c8ccc898-e274-4f7d-8178-a29ebd76f967', 423, 'c8ccc898-e274-4f7d-8178-a29ebd76f967');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('57a1f5ac-ffae-4e36-aaa2-0b6ed7bb7dd8', 'Rosalee', 'Conn', '297205746', '29158 Lubowitz Corner', 'Santino90@gmail.com', '959.702.1380');
+INSERT INTO instructor (id, contact_person_id) VALUES ('57a1f5ac-ffae-4e36-aaa2-0b6ed7bb7dd8', '57a1f5ac-ffae-4e36-aaa2-0b6ed7bb7dd8');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('de5dd04d-c004-4c89-8200-69b84b0b0e43', 'Table', 'Orchestrator', 21, 276);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('e18336f4-110d-46d8-b996-b6c0e07efc30', '2023-11-17T05:49:52.378Z', '2023-11-18T01:58:42.583Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('9e168bf5-9546-470f-b653-7f19b8a93bdf', 'Sonia', 'Heaney', '204657020', '086 Elta Flats', 'Spencer11@yahoo.com', '703-970-0245 x586');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('9e168bf5-9546-470f-b653-7f19b8a93bdf', 370, '9e168bf5-9546-470f-b653-7f19b8a93bdf');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e261fdf2-0920-459c-b226-5503b329d900', 'Kaden', 'Rath', '371674803', '01570 Quigley Bypass', 'Milan_Dickinson@hotmail.com', '810.491.1893 x03535');
+INSERT INTO instructor (id, contact_person_id) VALUES ('e261fdf2-0920-459c-b226-5503b329d900', 'e261fdf2-0920-459c-b226-5503b329d900');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('c1db243d-3f51-4b05-8b6a-08957865b837', 'Fish', 'Supervisor', 49, 646);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('666834a6-181f-4691-b719-8d7ebe96c9f7', '2023-11-16T14:17:12.861Z', '2023-11-17T20:32:00.543Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4a601c14-3e83-495e-8adc-2a161d20c0e8', 'Zula', 'Olson', '837554547', '8858 Littel Hollow', 'Lura.Bartoletti@yahoo.com', '323-692-3178 x4661');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4a601c14-3e83-495e-8adc-2a161d20c0e8', 449, '4a601c14-3e83-495e-8adc-2a161d20c0e8');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('f028c307-912a-4c06-ab07-1ad145fac605', 'Kraig', 'Welch', '303325267', '83912 Koepp Track', 'Owen.Heaney@gmail.com', '423.358.1971 x7297');
+INSERT INTO instructor (id, contact_person_id) VALUES ('f028c307-912a-4c06-ab07-1ad145fac605', 'f028c307-912a-4c06-ab07-1ad145fac605');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('342ad0e7-b102-49b9-90a1-79b9950e3902', 'Soap', 'Administrator', 41, 617);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('621ff7f4-c280-4453-873d-eb92fc3b22f2', '2023-11-17T03:48:45.678Z', '2023-11-17T18:35:20.386Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('37a06e7b-baaf-4920-bdde-43b908f8079d', 'Helga', 'Dare', '302762838', '5862 Runolfsson Curve', 'Kaylee.Rempel92@yahoo.com', '682-868-1382 x205');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('37a06e7b-baaf-4920-bdde-43b908f8079d', 201, '37a06e7b-baaf-4920-bdde-43b908f8079d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1b1bb59b-e579-4036-8d56-0eeafd2a6248', 'Viva', 'Homenick', '396266649', '443 Bailey Lights', 'Donny.Miller@yahoo.com', '236-543-2123 x2070');
+INSERT INTO instructor (id, contact_person_id) VALUES ('1b1bb59b-e579-4036-8d56-0eeafd2a6248', '1b1bb59b-e579-4036-8d56-0eeafd2a6248');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('7d7996d7-989a-4a13-a5a3-e8928831cd88', 'Keyboard', 'Designer', 36, 417);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('ce80ed52-5597-452f-9b66-d2cae41ecd8a', '2023-11-17T00:49:39.245Z', '2023-11-18T00:40:43.387Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8661aa3c-c996-42f5-ab66-bd4955a758ae', 'Kaylee', 'Lang', '731908982', '59884 Jeanette Ranch', 'Marilou_Collier88@hotmail.com', '1-850-980-9711');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('8661aa3c-c996-42f5-ab66-bd4955a758ae', 307, '8661aa3c-c996-42f5-ab66-bd4955a758ae');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('86f4c8ed-e24e-473b-a02e-88cca5c2ec69', 'Caesar', 'Bins', '603759567', '055 Coy Flat', 'Kiara.Hirthe@yahoo.com', '(904) 614-0198 x87594');
+INSERT INTO instructor (id, contact_person_id) VALUES ('86f4c8ed-e24e-473b-a02e-88cca5c2ec69', '86f4c8ed-e24e-473b-a02e-88cca5c2ec69');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('8a448753-b3df-4f2c-82e7-5eda282c07c9', 'Pants', 'Orchestrator', 59, 141);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('f7e635c6-bfa5-4f0b-995b-f99df935e6a3', '2023-11-17T03:06:21.459Z', '2023-11-18T07:50:05.730Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('852c5b1f-7575-43e3-a714-5c2c46ace6da', 'Bernadine', 'Block', '564398362', '625 Weissnat Club', 'Gilbert75@yahoo.com', '(517) 394-5356 x78477');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('852c5b1f-7575-43e3-a714-5c2c46ace6da', 199, '852c5b1f-7575-43e3-a714-5c2c46ace6da');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('60f709b1-d145-49b2-a850-50281b4bdd17', 'Emiliano', 'Maggio', '345329237', '45322 Modesto Plains', 'Sheridan.Adams@gmail.com', '(497) 967-4229');
+INSERT INTO instructor (id, contact_person_id) VALUES ('60f709b1-d145-49b2-a850-50281b4bdd17', '60f709b1-d145-49b2-a850-50281b4bdd17');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e7824379-8c51-406a-9059-00e418e757c7', 'Gloves', 'Producer', 33, 341);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('d2d1696a-45f1-4b19-a77f-c203eac5731b', '2023-11-16T16:43:32.858Z', '2023-11-18T02:12:44.451Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('25055807-5cc8-4867-9fd1-27236c7fb18d', 'Velma', 'Kiehn', '641045628', '4598 Powlowski Glens', 'George_Braun0@yahoo.com', '1-929-564-3450 x5565');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('25055807-5cc8-4867-9fd1-27236c7fb18d', 351, '25055807-5cc8-4867-9fd1-27236c7fb18d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('342d4d0b-1fd1-4132-8cae-0eaca1223461', 'Nolan', 'Vandervort', '256464105', '3022 Kamryn Isle', 'Keven50@hotmail.com', '1-530-917-5659 x469');
+INSERT INTO instructor (id, contact_person_id) VALUES ('342d4d0b-1fd1-4132-8cae-0eaca1223461', '342d4d0b-1fd1-4132-8cae-0eaca1223461');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('6bf07aba-c566-4f0d-b694-8c9f152cfe4c', 'Pizza', 'Officer', 96, 650);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('68854fba-04fa-4faa-b8ad-669b60cf0e4b', '2023-11-17T05:21:40.444Z', '2023-11-17T15:08:29.856Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('7ba63d5e-6a1f-4767-9762-3180e2379e13', 'Randal', 'Schmitt', '977102710', '0437 Davion Parkways', 'Murphy35@yahoo.com', '(774) 785-7565 x942');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('7ba63d5e-6a1f-4767-9762-3180e2379e13', 233, '7ba63d5e-6a1f-4767-9762-3180e2379e13');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('70dd17cb-c50c-4b4b-a4f6-a9e27bda66e1', 'Justice', 'Douglas', '172750489', '01855 Hand Shores', 'Keshaun38@yahoo.com', '(317) 878-6123 x44984');
+INSERT INTO instructor (id, contact_person_id) VALUES ('70dd17cb-c50c-4b4b-a4f6-a9e27bda66e1', '70dd17cb-c50c-4b4b-a4f6-a9e27bda66e1');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e7e03025-6382-42ea-ac83-1283de20f73f', 'Soap', 'Analyst', 61, 930);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('b7b9841a-c66a-4dd7-a8d1-25076754b113', '2023-11-16T23:01:37.385Z', '2023-11-17T08:55:12.714Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b370aafa-d953-446b-86aa-1e1f3ddbe17d', 'Grace', 'Gutkowski', '851795629', '5537 Gislason Street', 'Adelle_Feil@hotmail.com', '291.905.0744');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('b370aafa-d953-446b-86aa-1e1f3ddbe17d', 440, 'b370aafa-d953-446b-86aa-1e1f3ddbe17d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('56e67eef-825a-4c81-9ca8-07cdf0e3c04e', 'Evie', 'Bailey', '584406609', '86726 Kuhlman Ridges', 'Barton89@hotmail.com', '286.560.2555');
+INSERT INTO instructor (id, contact_person_id) VALUES ('56e67eef-825a-4c81-9ca8-07cdf0e3c04e', '56e67eef-825a-4c81-9ca8-07cdf0e3c04e');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('5012bba7-54ae-49ac-a7d3-4584bd013d4d', 'Bacon', 'Developer', 60, 974);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('5c62db72-3920-48ab-adc5-3f3212f93b59', '2023-11-16T09:13:57.823Z', '2023-11-18T08:10:52.428Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('215499f8-7cb4-4f2f-b3af-aa6132c6ab2d', 'Linda', 'Ullrich', '743929133', '496 Wehner Mill', 'Jarret3@hotmail.com', '450.252.0248 x45733');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('215499f8-7cb4-4f2f-b3af-aa6132c6ab2d', 214, '215499f8-7cb4-4f2f-b3af-aa6132c6ab2d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('9d9b38b6-9ed9-414e-8271-172108a09ef0', 'Rahul', 'Jacobi', '501072558', '5270 Luettgen Overpass', 'Brandyn_Beatty@gmail.com', '1-981-893-1962 x5327');
+INSERT INTO instructor (id, contact_person_id) VALUES ('9d9b38b6-9ed9-414e-8271-172108a09ef0', '9d9b38b6-9ed9-414e-8271-172108a09ef0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('f62c743e-4b88-4412-8e5b-9420fc9035f8', 'Chair', 'Manager', 81, 886);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('6dad3a7e-db8f-42ad-98ba-323ca179691c', '2023-11-16T21:36:10.487Z', '2023-11-17T22:20:10.556Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d1a4f4ef-460d-4e1d-b31c-92a8b6d0e1af', 'Susie', 'Armstrong', '160423660', '50304 Reinger Fort', 'Regan.Bechtelar28@yahoo.com', '(279) 503-3369');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('d1a4f4ef-460d-4e1d-b31c-92a8b6d0e1af', 482, 'd1a4f4ef-460d-4e1d-b31c-92a8b6d0e1af');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('0bb30768-fc70-4839-8c87-36cb3cf8b775', 'Allie', 'Haley', '409936732', '3657 Camille Cove', 'Kristofer.Gerhold54@gmail.com', '(630) 294-6601 x514');
+INSERT INTO instructor (id, contact_person_id) VALUES ('0bb30768-fc70-4839-8c87-36cb3cf8b775', '0bb30768-fc70-4839-8c87-36cb3cf8b775');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('b625592c-f0c1-48ca-8a02-505e98f31887', 'Table', 'Manager', 98, 592);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('06674694-3f73-4491-8384-d338c437add9', '2023-11-16T11:11:19.292Z', '2023-11-17T17:35:38.075Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('689be73a-82be-453e-abc1-187fbd3828fe', 'Quinten', 'Vandervort', '930307977', '0587 Dietrich Tunnel', 'Micah.Watsica82@gmail.com', '(264) 509-0310 x38021');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('689be73a-82be-453e-abc1-187fbd3828fe', 115, '689be73a-82be-453e-abc1-187fbd3828fe');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b812a348-f504-4698-9e36-b203c24e6cc6', 'Javier', 'Turcotte', '204002475', '53298 Ophelia Trafficway', 'Dee.Strosin49@yahoo.com', '(473) 835-5216');
+INSERT INTO instructor (id, contact_person_id) VALUES ('b812a348-f504-4698-9e36-b203c24e6cc6', 'b812a348-f504-4698-9e36-b203c24e6cc6');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('7fa25cdd-a8d7-4132-809e-88e19dd0c60e', 'Gloves', 'Consultant', 59, 487);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('118ef36a-0f77-427d-8b19-1cf9b32899c7', '2023-11-16T13:40:07.103Z', '2023-11-18T08:18:53.120Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4a3d4082-cf21-48bd-b586-558be9e4f6dd', 'Reilly', 'Kling', '778335589', '8598 Hilton Trail', 'Nathanial90@yahoo.com', '706.563.1407');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4a3d4082-cf21-48bd-b586-558be9e4f6dd', 369, '4a3d4082-cf21-48bd-b586-558be9e4f6dd');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b243874e-c99a-4dc8-9d64-8e28f01425b3', 'Dora', 'OReilly', '234729888', '646 Melyssa Trail', 'Annabel.Prosacco94@gmail.com', '(822) 298-6154 x9980');
+INSERT INTO instructor (id, contact_person_id) VALUES ('b243874e-c99a-4dc8-9d64-8e28f01425b3', 'b243874e-c99a-4dc8-9d64-8e28f01425b3');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('18f93de3-0acb-443f-9ae9-591bdf78900b', 'Hat', 'Facilitator', 44, 569);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('2734e45d-acb3-4806-b34f-9ca72205b0fc', '2023-11-17T07:16:01.097Z', '2023-11-17T20:57:29.579Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('01382674-fc37-4dc2-8d24-71cc51685a28', 'Nia', 'Rowe', '341108066', '24443 Lexie Mall', 'Ana.Koepp93@gmail.com', '779.291.4718 x5579');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('01382674-fc37-4dc2-8d24-71cc51685a28', 346, '01382674-fc37-4dc2-8d24-71cc51685a28');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4055ae42-3aa7-4b48-b903-f67fc8cceb98', 'Laurine', 'Boehm', '115359907', '910 Liana Stravenue', 'Price40@yahoo.com', '(952) 217-4035 x171');
+INSERT INTO instructor (id, contact_person_id) VALUES ('4055ae42-3aa7-4b48-b903-f67fc8cceb98', '4055ae42-3aa7-4b48-b903-f67fc8cceb98');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('26077335-3920-459a-9c09-45131e033762', 'Soap', 'Facilitator', 0, 983);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('e9733820-006e-4638-8495-495a64941fb8', '2023-11-17T04:00:11.492Z', '2023-11-17T10:28:02.668Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('24ecf73c-da00-481c-a563-d3d0d9e106c6', 'Furman', 'Hagenes', '163576903', '1237 Purdy Cliff', 'Eleonore13@hotmail.com', '1-605-787-9743 x76035');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('24ecf73c-da00-481c-a563-d3d0d9e106c6', 194, '24ecf73c-da00-481c-a563-d3d0d9e106c6');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('15f14504-cba8-4eff-a6be-465dd4058e0a', 'Mike', 'Mayer', '110237509', '61927 Wehner Crest', 'Annabell29@gmail.com', '969-465-4990 x776');
+INSERT INTO instructor (id, contact_person_id) VALUES ('15f14504-cba8-4eff-a6be-465dd4058e0a', '15f14504-cba8-4eff-a6be-465dd4058e0a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('9c5de309-4b28-4909-82a7-44dff99eac82', 'Hat', 'Executive', 28, 850);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('375eb03e-b384-40cf-927d-7b8e987b1892', '2023-11-17T01:27:43.321Z', '2023-11-17T12:27:29.019Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('951f9554-1f77-4ca9-a1cb-8b92c60431d3', 'Dandre', 'Jacobi', '428349660', '706 Quigley Passage', 'Aurelia.Bosco81@hotmail.com', '235.749.1413 x810');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('951f9554-1f77-4ca9-a1cb-8b92c60431d3', 219, '951f9554-1f77-4ca9-a1cb-8b92c60431d3');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8f2533d1-c6ec-4e9d-9bdd-f266b4fc02df', 'Dolores', 'Douglas', '879618302', '413 Bonnie Causeway', 'Elmira86@hotmail.com', '1-580-345-3303 x7439');
+INSERT INTO instructor (id, contact_person_id) VALUES ('8f2533d1-c6ec-4e9d-9bdd-f266b4fc02df', '8f2533d1-c6ec-4e9d-9bdd-f266b4fc02df');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('566054dd-b8fb-4286-9eff-a4cf25db21fb', 'Cheese', 'Liaison', 44, 545);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('2f083514-ca31-4160-b447-86bb9a881a49', '2023-11-16T17:16:19.573Z', '2023-11-18T07:28:24.314Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('6894dc55-f46f-44d2-b4ab-998aa90e97c5', 'Kaia', 'McClure', '261217689', '890 Reilly Squares', 'Abraham.Spinka@hotmail.com', '1-362-562-9110');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('6894dc55-f46f-44d2-b4ab-998aa90e97c5', 246, '6894dc55-f46f-44d2-b4ab-998aa90e97c5');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('ff05955d-b388-44ec-9419-e6301dcc6714', 'Elise', 'McLaughlin', '493650869', '95233 Efren Creek', 'Keyon.OHara34@yahoo.com', '922-921-9709');
+INSERT INTO instructor (id, contact_person_id) VALUES ('ff05955d-b388-44ec-9419-e6301dcc6714', 'ff05955d-b388-44ec-9419-e6301dcc6714');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e961e4d0-7bc6-4a54-806a-4053d6f720a0', 'Towels', 'Associate', 28, 149);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('600fff52-e116-4368-a96a-5485980edb5b', '2023-11-16T19:57:08.409Z', '2023-11-17T14:04:57.674Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('9fbc77e6-98c8-414b-8563-aa0bb87cfc6e', 'Maci', 'Jones', '103414654', '502 Upton Lights', 'Uriah.Kilback@yahoo.com', '(352) 611-4371 x1258');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('9fbc77e6-98c8-414b-8563-aa0bb87cfc6e', 198, '9fbc77e6-98c8-414b-8563-aa0bb87cfc6e');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('189810f3-8283-4139-9ee1-8895d4def400', 'Tyra', 'Lowe', '961292655', '92851 Payton Wall', 'Tressie.Goldner52@yahoo.com', '524-776-3086');
+INSERT INTO instructor (id, contact_person_id) VALUES ('189810f3-8283-4139-9ee1-8895d4def400', '189810f3-8283-4139-9ee1-8895d4def400');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e78c332a-4593-4be2-9bc6-f75d9a8373af', 'Fish', 'Designer', 84, 606);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('b312c6aa-b3d7-4e32-b25f-1dbe815eeebf', '2023-11-17T05:19:44.718Z', '2023-11-18T07:18:43.898Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('9fa9f3a5-f28c-4483-8b20-b446d98f344d', 'Yvonne', 'Hickle', '975912680', '3384 Josie Circles', 'Tia_Heathcote@gmail.com', '448.765.5932 x7066');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('9fa9f3a5-f28c-4483-8b20-b446d98f344d', 298, '9fa9f3a5-f28c-4483-8b20-b446d98f344d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5a657c52-cd6a-4bdc-a76d-661437baab7a', 'Allan', 'Walker', '366548631', '1172 Lang Radial', 'Trycia.Oberbrunner57@gmail.com', '494.888.9667 x344');
+INSERT INTO instructor (id, contact_person_id) VALUES ('5a657c52-cd6a-4bdc-a76d-661437baab7a', '5a657c52-cd6a-4bdc-a76d-661437baab7a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('50df0ce7-22f6-4507-aac5-166af00c5c88', 'Fish', 'Analyst', 56, 572);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('63577734-6b14-4f60-8f25-c786ef656439', '2023-11-16T17:45:58.359Z', '2023-11-17T23:38:14.482Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a4373edd-7503-4766-8b11-39ab292f42bc', 'Conor', 'Schaefer', '764666862', '29506 Gottlieb Avenue', 'Hugh_Lindgren@hotmail.com', '600.592.7918 x6518');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a4373edd-7503-4766-8b11-39ab292f42bc', 377, 'a4373edd-7503-4766-8b11-39ab292f42bc');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('fda3e00b-6125-459d-9bbb-42230c6624db', 'Antonina', 'Balistreri', '843658516', '3069 Derek Coves', 'Schuyler.Brakus@hotmail.com', '(440) 860-7667');
+INSERT INTO instructor (id, contact_person_id) VALUES ('fda3e00b-6125-459d-9bbb-42230c6624db', 'fda3e00b-6125-459d-9bbb-42230c6624db');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('4cb11900-ca47-4a2e-a38f-ed9ad20447df', 'Tuna', 'Representative', 15, 694);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('60c87446-2f50-44bf-9dbb-29a71fcd2b79', '2023-11-16T13:11:55.608Z', '2023-11-17T23:42:04.101Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4756a0d8-eb5f-40a7-8ccb-fa9e0168ad25', 'Enrique', 'Simonis', '183265840', '069 OConnell Mount', 'Noelia_Beier@hotmail.com', '1-380-721-9612 x1071');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4756a0d8-eb5f-40a7-8ccb-fa9e0168ad25', 255, '4756a0d8-eb5f-40a7-8ccb-fa9e0168ad25');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5d7d57a4-d939-4f4b-85d3-6fd0936530e0', 'Malika', 'Breitenberg', '291978381', '867 Zboncak Gateway', 'Carolanne.Conroy@yahoo.com', '943-818-8407');
+INSERT INTO instructor (id, contact_person_id) VALUES ('5d7d57a4-d939-4f4b-85d3-6fd0936530e0', '5d7d57a4-d939-4f4b-85d3-6fd0936530e0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('610b8658-261a-459b-8e19-27eed4e7cee4', 'Soap', 'Specialist', 90, 440);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('89952a4e-76e7-40bb-bca2-2741854b80b6', '2023-11-16T19:25:55.601Z', '2023-11-18T05:12:33.207Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1b24defb-d8f3-4786-aa96-53ddb9ede613', 'Adah', 'Berge', '766117001', '592 Robb Hollow', 'Emelie.Luettgen@hotmail.com', '248-317-1936 x90243');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('1b24defb-d8f3-4786-aa96-53ddb9ede613', 292, '1b24defb-d8f3-4786-aa96-53ddb9ede613');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5f0bf362-c6c1-4e6e-b075-9957403c5be7', 'Blaze', 'MacGyver', '223230274', '363 Champlin Radial', 'Violet26@yahoo.com', '709-934-5016 x4319');
+INSERT INTO instructor (id, contact_person_id) VALUES ('5f0bf362-c6c1-4e6e-b075-9957403c5be7', '5f0bf362-c6c1-4e6e-b075-9957403c5be7');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('3a7ac692-9329-4b9c-8e2f-0b486a0f4c53', 'Keyboard', 'Consultant', 96, 792);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('45ff1898-d387-44b8-91c8-7d4c687aa46c', '2023-11-16T10:25:36.626Z', '2023-11-17T15:43:01.495Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('3b6dd0d0-aca0-41d5-9e06-3d47f6509514', 'Haylee', 'Lubowitz', '161580871', '55705 Stokes Corner', 'Princess.Stokes@gmail.com', '(246) 363-8637');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('3b6dd0d0-aca0-41d5-9e06-3d47f6509514', 470, '3b6dd0d0-aca0-41d5-9e06-3d47f6509514');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4279f413-3725-42e1-8ab2-356bfcae37e0', 'Cullen', 'Hamill', '519153973', '66920 Arlie Fords', 'Terrence_Connelly@hotmail.com', '1-574-409-2886');
+INSERT INTO instructor (id, contact_person_id) VALUES ('4279f413-3725-42e1-8ab2-356bfcae37e0', '4279f413-3725-42e1-8ab2-356bfcae37e0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('94ccf98b-3c30-41e4-aadb-c1614f690794', 'Ball', 'Designer', 73, 265);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('336816d9-2076-4265-8db3-6c2b3fbfe76f', '2023-11-16T23:17:37.911Z', '2023-11-17T12:01:13.279Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('624bc5f4-95fd-4126-9424-21c59b8cf7b2', 'Thomas', 'Welch', '680899297', '3415 Verna Springs', 'Lukas10@yahoo.com', '466-250-0366 x7671');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('624bc5f4-95fd-4126-9424-21c59b8cf7b2', 381, '624bc5f4-95fd-4126-9424-21c59b8cf7b2');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('7ea05985-0177-459f-9d39-ab2b4f9f7666', 'Brett', 'Romaguera', '313720362', '78605 Kozey Viaduct', 'Lee65@hotmail.com', '(471) 570-3905 x197');
+INSERT INTO instructor (id, contact_person_id) VALUES ('7ea05985-0177-459f-9d39-ab2b4f9f7666', '7ea05985-0177-459f-9d39-ab2b4f9f7666');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e6517605-9bd8-4aea-a2ff-a198bcf6bc97', 'Ball', 'Facilitator', 66, 157);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('e195baa4-8a26-4096-9384-2e571bce2c18', '2023-11-16T22:20:52.857Z', '2023-11-17T16:01:22.488Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('c61c303c-9849-45d0-9e27-7324b0bf03c8', 'Rafael', 'Gleichner', '952750263', '23631 Fadel Burgs', 'Justus_Welch@hotmail.com', '1-284-798-5539 x08908');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('c61c303c-9849-45d0-9e27-7324b0bf03c8', 400, 'c61c303c-9849-45d0-9e27-7324b0bf03c8');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('476e69c4-e348-4ca0-9a8b-66f56cb24fe1', 'Margarette', 'Wiza', '156106331', '74226 OReilly Inlet', 'Regan83@hotmail.com', '355.336.2797 x7579');
+INSERT INTO instructor (id, contact_person_id) VALUES ('476e69c4-e348-4ca0-9a8b-66f56cb24fe1', '476e69c4-e348-4ca0-9a8b-66f56cb24fe1');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('0ddd6342-d2af-474a-a460-25a801074990', 'Table', 'Agent', 62, 698);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('defb6fdc-65ea-474d-91a6-35a982181b66', '2023-11-17T07:34:44.799Z', '2023-11-17T11:13:44.264Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a3e7d691-a7e5-414b-980c-e11e9f08af48', 'Jeanne', 'Emmerich', '760941240', '7372 Destin Orchard', 'Myles12@gmail.com', '1-385-616-0346 x32313');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a3e7d691-a7e5-414b-980c-e11e9f08af48', 133, 'a3e7d691-a7e5-414b-980c-e11e9f08af48');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('252867f1-626d-462d-8950-53d584bf06b8', 'Ricky', 'Haley', '860329964', '11754 Franecki Parks', 'Mya50@yahoo.com', '846-692-2116 x4801');
+INSERT INTO instructor (id, contact_person_id) VALUES ('252867f1-626d-462d-8950-53d584bf06b8', '252867f1-626d-462d-8950-53d584bf06b8');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('3f97f00a-3941-4792-a648-6db3c184c438', 'Chair', 'Analyst', 92, 987);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('a3bdddb6-6836-47ae-96d4-e869a579c9ed', '2023-11-16T09:48:36.554Z', '2023-11-17T23:40:52.265Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('2499fedf-51ac-4bdc-be15-87eb4c251b10', 'Cleta', 'Green', '890256804', '8802 Johnathon Alley', 'Erick21@gmail.com', '1-277-891-0550');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('2499fedf-51ac-4bdc-be15-87eb4c251b10', 148, '2499fedf-51ac-4bdc-be15-87eb4c251b10');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d5875035-0824-4553-8a87-f3747de69233', 'Jared', 'Heathcote', '394935101', '5791 Lebsack Crescent', 'Noemi.Cruickshank@hotmail.com', '575.381.3425 x56844');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d5875035-0824-4553-8a87-f3747de69233', 'd5875035-0824-4553-8a87-f3747de69233');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('7676b682-1825-47d1-86d5-4348cd70407a', 'Chair', 'Engineer', 77, 800);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('0436687d-1a32-4789-b694-245493850bad', '2023-11-17T04:59:10.931Z', '2023-11-18T03:48:36.047Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('afecae6f-5bb0-4018-94d8-ffad898ab3f4', 'Miguel', 'Lemke', '273689987', '3697 OHara Square', 'Justine.Leannon76@yahoo.com', '1-960-652-0536 x0394');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('afecae6f-5bb0-4018-94d8-ffad898ab3f4', 254, 'afecae6f-5bb0-4018-94d8-ffad898ab3f4');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('38640c6d-4b17-4aa2-8a6c-ed02e67e4ea3', 'Trevor', 'Koss', '205641303', '6714 Treva Row', 'Bernardo19@gmail.com', '(656) 651-3475 x33697');
+INSERT INTO instructor (id, contact_person_id) VALUES ('38640c6d-4b17-4aa2-8a6c-ed02e67e4ea3', '38640c6d-4b17-4aa2-8a6c-ed02e67e4ea3');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('7a7c274a-26c5-44cc-8dbf-bfb9c3d528c7', 'Table', 'Specialist', 57, 734);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('08f9ff6f-db3a-476a-8d41-d1d90ae59a9d', '2023-11-17T08:13:25.476Z', '2023-11-17T17:15:15.965Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('c8064516-fcac-4045-8499-52d617f51569', 'Eden', 'Stanton', '402225046', '90726 OConner River', 'Erika_Koepp@hotmail.com', '236-305-7369 x34761');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('c8064516-fcac-4045-8499-52d617f51569', 358, 'c8064516-fcac-4045-8499-52d617f51569');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e647cad0-3e73-4996-972e-813ee93448ee', 'Dakota', 'Lindgren', '594587386', '0243 Lockman River', 'Elyse_Raynor@hotmail.com', '1-362-494-4551 x38531');
+INSERT INTO instructor (id, contact_person_id) VALUES ('e647cad0-3e73-4996-972e-813ee93448ee', 'e647cad0-3e73-4996-972e-813ee93448ee');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('2216fefc-d696-4967-ab59-a3ea68449d6e', 'Gloves', 'Specialist', 31, 383);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('6e97fd3c-10d2-43a2-8aee-8638c43e7dd7', '2023-11-16T15:08:02.733Z', '2023-11-18T02:14:46.854Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d49dbd9a-4d2d-4e9c-a9bb-0fe86dbfcb52', 'Hubert', 'Morar', '440558066', '402 Russ Ports', 'Lamar.Blick@yahoo.com', '(990) 998-2348');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('d49dbd9a-4d2d-4e9c-a9bb-0fe86dbfcb52', 356, 'd49dbd9a-4d2d-4e9c-a9bb-0fe86dbfcb52');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('af21a7c4-e3a3-44e9-8f46-deee04fb6f8a', 'Alessandro', 'Schuster', '933394085', '20566 Considine Mission', 'Zoie84@hotmail.com', '1-579-489-4201 x56211');
+INSERT INTO instructor (id, contact_person_id) VALUES ('af21a7c4-e3a3-44e9-8f46-deee04fb6f8a', 'af21a7c4-e3a3-44e9-8f46-deee04fb6f8a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('f424aaaa-b81c-4591-9758-f4c0bc272b12', 'Bike', 'Technician', 81, 860);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('45915726-56a4-4278-8c31-f69303667c76', '2023-11-16T16:15:32.984Z', '2023-11-18T07:21:32.383Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('79efdecf-34a6-4308-9cb1-7b5e0e506809', 'Durward', 'Carter', '429941144', '93384 Jayde Parkways', 'Buck_Skiles@gmail.com', '1-944-328-7630 x09622');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('79efdecf-34a6-4308-9cb1-7b5e0e506809', 286, '79efdecf-34a6-4308-9cb1-7b5e0e506809');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('fb4f821f-0d3a-47a2-8aa9-04f48f37d7d6', 'Chester', 'Bradtke', '654971140', '4330 Vanessa Inlet', 'Gabrielle59@gmail.com', '416.460.5166 x0334');
+INSERT INTO instructor (id, contact_person_id) VALUES ('fb4f821f-0d3a-47a2-8aa9-04f48f37d7d6', 'fb4f821f-0d3a-47a2-8aa9-04f48f37d7d6');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('1e7bf084-3fee-4576-8ef7-b447faa6e0d2', 'Pizza', 'Producer', 50, 954);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('b2a974a3-5230-42c2-8301-98100b41a5a5', '2023-11-16T17:44:42.248Z', '2023-11-18T05:37:27.897Z');
+INSERT INTO instrument_type (name) VALUES ('Rubber');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a1d78534-6c13-41b2-a6be-cd628774e6e6', 'Maxime', 'Schimmel', '457899006', '295 Ivory Divide', 'Nels_Heaney86@hotmail.com', '1-229-810-0041 x12411');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a1d78534-6c13-41b2-a6be-cd628774e6e6', 296, 'a1d78534-6c13-41b2-a6be-cd628774e6e6');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('527927f6-5296-49de-a16f-8c7c30d675be', 'Dalton', 'Nicolas', '259425748', '5355 Kyler Ranch', 'Anjali.Gutkowski@yahoo.com', '1-373-496-2858');
+INSERT INTO instructor (id, contact_person_id) VALUES ('527927f6-5296-49de-a16f-8c7c30d675be', '527927f6-5296-49de-a16f-8c7c30d675be');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('9b919283-6b51-4c5f-ac4d-76d33a499a67', 'Shirt', 'Analyst', 76, 825);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('a4df2130-2b84-4b6d-91c4-3ff780ef48d6', '2023-11-16T20:42:43.986Z', '2023-11-17T13:16:44.943Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('df7cdd92-60e9-4d2b-9ade-3d31c5f1a035', 'Garnett', 'Mraz', '615985604', '7111 Violet Islands', 'Sadye.Gleason88@gmail.com', '218-990-3050 x0156');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('df7cdd92-60e9-4d2b-9ade-3d31c5f1a035', 410, 'df7cdd92-60e9-4d2b-9ade-3d31c5f1a035');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5a4d36cd-9fb8-4bb6-9e1e-c002a529815e', 'Nettie', 'Murray', '966484219', '20227 Upton Estates', 'Terrence29@hotmail.com', '1-931-987-7484');
+INSERT INTO instructor (id, contact_person_id) VALUES ('5a4d36cd-9fb8-4bb6-9e1e-c002a529815e', '5a4d36cd-9fb8-4bb6-9e1e-c002a529815e');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('c6b080aa-6f36-4228-a1da-ce6cb4e2f454', 'Table', 'Consultant', 48, 283);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('4f073b1e-7b3b-4e6c-bf2f-b010fcf61c66', '2023-11-17T03:45:49.312Z', '2023-11-17T12:41:07.871Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4d9efc01-5948-4474-b0cf-d40f32c07bf5', 'Jerrell', 'Mills', '386404486', '7304 Deon Junction', 'Reta.King66@gmail.com', '974.674.3050 x692');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4d9efc01-5948-4474-b0cf-d40f32c07bf5', 462, '4d9efc01-5948-4474-b0cf-d40f32c07bf5');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('3b6078f4-31f8-4058-9c76-b653d1389c89', 'Wilburn', 'Rolfson', '426742427', '2249 Douglas Walk', 'Jenifer.Lindgren@hotmail.com', '727-322-0247');
+INSERT INTO instructor (id, contact_person_id) VALUES ('3b6078f4-31f8-4058-9c76-b653d1389c89', '3b6078f4-31f8-4058-9c76-b653d1389c89');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('1a3a1f15-7982-4caa-a8fe-ea626eb13423', 'Tuna', 'Supervisor', 63, 495);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('7faa09e3-d91a-454f-b010-8abc37a24fa1', '2023-11-17T06:28:46.225Z', '2023-11-18T01:26:18.357Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5aa702e3-f58a-4fdd-933a-8a8eb93c4672', 'Ernest', 'Conn', '682575357', '5251 Brandy Drives', 'Fannie_Jakubowski@gmail.com', '(246) 241-8700 x4087');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('5aa702e3-f58a-4fdd-933a-8a8eb93c4672', 359, '5aa702e3-f58a-4fdd-933a-8a8eb93c4672');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('f78666b0-b68c-4b3e-81a8-7a5497a55f9c', 'Brandt', 'Hilpert', '226188984', '47051 Satterfield Branch', 'Andrew.Donnelly@yahoo.com', '423.951.1888 x6386');
+INSERT INTO instructor (id, contact_person_id) VALUES ('f78666b0-b68c-4b3e-81a8-7a5497a55f9c', 'f78666b0-b68c-4b3e-81a8-7a5497a55f9c');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('8a1731cb-420c-4498-a71b-d77a3a964f2a', 'Hat', 'Liaison', 3, 235);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('7ab081ed-eb87-4c60-beaa-7996ca06831f', '2023-11-16T21:31:57.838Z', '2023-11-17T23:40:13.914Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d87e5eda-3d05-455b-817b-58bbb46b281f', 'Jewel', 'Ritchie', '205380553', '729 Nona Trail', 'Flo.Dooley@yahoo.com', '590-536-9232 x76977');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('d87e5eda-3d05-455b-817b-58bbb46b281f', 204, 'd87e5eda-3d05-455b-817b-58bbb46b281f');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8e229602-9b9c-43d5-8205-80cab4034d76', 'Vladimir', 'Roberts', '733390108', '0522 Buster Ways', 'Rey33@yahoo.com', '1-315-334-2269');
+INSERT INTO instructor (id, contact_person_id) VALUES ('8e229602-9b9c-43d5-8205-80cab4034d76', '8e229602-9b9c-43d5-8205-80cab4034d76');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('36124bbb-577b-4b5c-a6ac-6ea5157208fe', 'Pizza', 'Engineer', 82, 964);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('0564d005-de8d-47b9-9ec2-127efddbdf76', '2023-11-16T19:13:15.016Z', '2023-11-18T02:16:39.819Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5f4ddf80-2007-46aa-9e08-e91e5b78e3a1', 'Winnifred', 'Feeney', '513625007', '484 King Fords', 'Bridget_Tremblay@hotmail.com', '953.600.4856 x2736');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('5f4ddf80-2007-46aa-9e08-e91e5b78e3a1', 485, '5f4ddf80-2007-46aa-9e08-e91e5b78e3a1');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('aa7adccc-280b-4c4e-a6af-ae609ef03d56', 'Cecelia', 'Walter', '679145481', '623 Feest Spring', 'Malachi_Hodkiewicz2@hotmail.com', '(949) 708-8126 x5523');
+INSERT INTO instructor (id, contact_person_id) VALUES ('aa7adccc-280b-4c4e-a6af-ae609ef03d56', 'aa7adccc-280b-4c4e-a6af-ae609ef03d56');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('2e6a3eb5-ec82-473a-a837-9ecb297eb0b4', 'Car', 'Architect', 73, 900);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('5fdfdad0-55d9-432b-a05f-3e77c0996fb8', '2023-11-16T23:26:21.970Z', '2023-11-18T04:44:43.060Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('30d8336f-cf84-4661-84ac-2141211aac59', 'Maxine', 'Kuvalis', '683663860', '9465 Quentin Passage', 'Wayne_Brekke38@gmail.com', '(889) 579-6000');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('30d8336f-cf84-4661-84ac-2141211aac59', 431, '30d8336f-cf84-4661-84ac-2141211aac59');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('55b35f1c-687f-4c84-903c-a9d88e05afe1', 'Roel', 'Kshlerin', '820494763', '33369 Marguerite Villages', 'Maeve_Dibbert71@hotmail.com', '914-325-8402');
+INSERT INTO instructor (id, contact_person_id) VALUES ('55b35f1c-687f-4c84-903c-a9d88e05afe1', '55b35f1c-687f-4c84-903c-a9d88e05afe1');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('6b48a4ce-e2d4-4b99-be35-c9bd1345fb60', 'Tuna', 'Planner', 30, 574);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('8cca7b5c-9cb9-48a5-98da-f92d5ec89d12', '2023-11-16T10:59:23.137Z', '2023-11-17T15:38:37.054Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('163fa1da-27a6-420f-a8e5-ed6fdfee7d2d', 'Eusebio', 'Harris', '506710550', '3809 Schowalter Groves', 'Sydnie.Dooley52@hotmail.com', '920.375.3506 x304');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('163fa1da-27a6-420f-a8e5-ed6fdfee7d2d', 122, '163fa1da-27a6-420f-a8e5-ed6fdfee7d2d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('11fde497-9a6f-4926-8549-7a6c5b7a31d7', 'Scot', 'Ratke', '738388671', '52103 Aric Extension', 'Savanah89@gmail.com', '1-965-688-9467');
+INSERT INTO instructor (id, contact_person_id) VALUES ('11fde497-9a6f-4926-8549-7a6c5b7a31d7', '11fde497-9a6f-4926-8549-7a6c5b7a31d7');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('72d8e655-bb97-4e78-8438-518a6328d73d', 'Ball', 'Orchestrator', 75, 410);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('1432c438-1156-4843-a6cb-13492e8b59f0', '2023-11-17T00:40:40.134Z', '2023-11-18T02:42:54.120Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b78a32cd-5f8a-4d02-8461-564b24367c6a', 'Armando', 'Mraz', '290305880', '417 Reanna Brook', 'Wyatt.Emard@gmail.com', '922-904-8222 x031');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('b78a32cd-5f8a-4d02-8461-564b24367c6a', 151, 'b78a32cd-5f8a-4d02-8461-564b24367c6a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('0ec97113-1e78-4c34-b050-239a9b1760a0', 'Kenya', 'Block', '282615911', '78381 Jaskolski Roads', 'Katrine0@yahoo.com', '687-804-4580 x7537');
+INSERT INTO instructor (id, contact_person_id) VALUES ('0ec97113-1e78-4c34-b050-239a9b1760a0', '0ec97113-1e78-4c34-b050-239a9b1760a0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('8e9bdba1-1f3a-4556-b13b-1158105cbc82', 'Chips', 'Facilitator', 84, 788);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('d3c26528-1845-40e6-bc38-32779eea8d30', '2023-11-16T20:14:20.981Z', '2023-11-17T17:40:58.502Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('79df3a35-5193-4f2e-ad30-42760dbee5c7', 'Trycia', 'Marks', '150068585', '4797 Douglas Brooks', 'Caterina54@gmail.com', '212-636-1549 x355');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('79df3a35-5193-4f2e-ad30-42760dbee5c7', 299, '79df3a35-5193-4f2e-ad30-42760dbee5c7');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('7bd8331c-1833-42d0-acd9-748b7f74e1e6', 'Santino', 'Reichel', '670548219', '824 Brekke Light', 'Curtis.Mayer47@yahoo.com', '827.979.0588 x946');
+INSERT INTO instructor (id, contact_person_id) VALUES ('7bd8331c-1833-42d0-acd9-748b7f74e1e6', '7bd8331c-1833-42d0-acd9-748b7f74e1e6');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('20571847-74b8-4c63-a162-c2ebea7e8574', 'Cheese', 'Producer', 98, 512);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('59f9c189-943e-4ef5-b1f3-7a3fb3c1761d', '2023-11-16T14:00:35.939Z', '2023-11-17T13:21:34.906Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('cfa6cd2c-9b16-4735-99d3-2f968ca0f368', 'Annabel', 'Pollich', '210333442', '07027 Schaden Prairie', 'Rhett_Keeling41@hotmail.com', '1-490-463-4195 x754');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('cfa6cd2c-9b16-4735-99d3-2f968ca0f368', 264, 'cfa6cd2c-9b16-4735-99d3-2f968ca0f368');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b1893cc3-68bc-4fcc-9dda-1846c26d5dab', 'Mariane', 'Okuneva', '664761923', '9646 Alfonzo Pike', 'Lucie29@yahoo.com', '608-486-5933 x1503');
+INSERT INTO instructor (id, contact_person_id) VALUES ('b1893cc3-68bc-4fcc-9dda-1846c26d5dab', 'b1893cc3-68bc-4fcc-9dda-1846c26d5dab');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('484c8720-e5b6-4e7e-8e6a-d2a5b038cf94', 'Car', 'Developer', 28, 795);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('77e784f7-f736-497d-bed5-1b70016c6d4a', '2023-11-17T02:18:26.882Z', '2023-11-17T16:52:21.374Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1bf1feba-2cc0-4b53-b797-2a0898051ca5', 'Hulda', 'McClure', '382311704', '46659 Kara Route', 'Nathanial48@hotmail.com', '(556) 442-9938 x174');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('1bf1feba-2cc0-4b53-b797-2a0898051ca5', 158, '1bf1feba-2cc0-4b53-b797-2a0898051ca5');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d8242d2e-85da-42af-95fd-c4592f6dedc6', 'David', 'Kessler', '684679790', '8242 Hilda Loaf', 'Fleta70@gmail.com', '1-587-944-0353');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d8242d2e-85da-42af-95fd-c4592f6dedc6', 'd8242d2e-85da-42af-95fd-c4592f6dedc6');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('d4466c7d-b868-4442-b837-23f78fe742b0', 'Cheese', 'Liaison', 33, 330);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('a8df376b-2008-4fab-b24c-3d8acd42dd93', '2023-11-16T22:43:30.012Z', '2023-11-17T10:30:34.082Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('062a5d7a-2289-4c6e-8913-bb85fcd7f134', 'Stanford', 'Herzog', '514150910', '795 Wyman Squares', 'Lois25@hotmail.com', '858-970-3814 x20157');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('062a5d7a-2289-4c6e-8913-bb85fcd7f134', 153, '062a5d7a-2289-4c6e-8913-bb85fcd7f134');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e62e3b93-e90a-445c-adfc-335dde92b45f', 'Janis', 'Boyle', '912379307', '270 Smith Loop', 'Icie.Schuppe2@hotmail.com', '701-985-9568');
+INSERT INTO instructor (id, contact_person_id) VALUES ('e62e3b93-e90a-445c-adfc-335dde92b45f', 'e62e3b93-e90a-445c-adfc-335dde92b45f');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e5ffad8e-5990-4fdc-a54b-bcabe035f01b', 'Computer', 'Agent', 78, 489);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('e2a5e6e0-a5fd-43a5-9f91-f71f99be60e0', '2023-11-17T00:45:42.586Z', '2023-11-18T01:04:53.030Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('0c93ddec-3dce-40f9-8210-9d0c773e40c5', 'Ignatius', 'Franecki', '403957206', '398 Velda Trail', 'Colt.Wunsch@gmail.com', '805.458.0909 x9381');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('0c93ddec-3dce-40f9-8210-9d0c773e40c5', 245, '0c93ddec-3dce-40f9-8210-9d0c773e40c5');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('342d792f-53e6-4c78-9025-bc1479609de5', 'Kamryn', 'Stoltenberg', '277627404', '4788 Upton Spring', 'Jewell.Nicolas@gmail.com', '200-931-6304 x327');
+INSERT INTO instructor (id, contact_person_id) VALUES ('342d792f-53e6-4c78-9025-bc1479609de5', '342d792f-53e6-4c78-9025-bc1479609de5');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('db8119e2-198c-4542-89d3-fbca42ff9f27', 'Shirt', 'Agent', 52, 293);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('34a50414-e707-4fc4-bd3c-543b3ac0e5f8', '2023-11-16T09:32:14.955Z', '2023-11-18T07:55:06.995Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('508b3cba-b424-4268-8d3a-5603c6cd6bab', 'Yasmeen', 'Nienow', '357818895', '471 Wiegand Pike', 'Novella_Lakin@yahoo.com', '527.855.8286 x5251');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('508b3cba-b424-4268-8d3a-5603c6cd6bab', 132, '508b3cba-b424-4268-8d3a-5603c6cd6bab');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('565a36ae-6037-4c48-a891-7a3d8d7a527a', 'Kurt', 'Feeney', '280022696', '33806 Ted Row', 'Libbie75@yahoo.com', '429-770-7507');
+INSERT INTO instructor (id, contact_person_id) VALUES ('565a36ae-6037-4c48-a891-7a3d8d7a527a', '565a36ae-6037-4c48-a891-7a3d8d7a527a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('4cbe5e34-ced6-42a6-bd5e-752de3b217d8', 'Table', 'Administrator', 80, 974);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('db598f37-de6f-446e-a253-64f89b86e60a', '2023-11-16T10:19:24.322Z', '2023-11-17T19:46:15.213Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('06e8dede-8291-4f7e-aca4-468c6263bf0a', 'Janessa', 'Reinger', '726763009', '79144 Alisha Port', 'Cathrine.Strosin59@yahoo.com', '484.768.8529 x7382');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('06e8dede-8291-4f7e-aca4-468c6263bf0a', 274, '06e8dede-8291-4f7e-aca4-468c6263bf0a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('281a004b-dccb-42a3-8ed2-c1a148d7d907', 'Isaac', 'Leannon', '682155581', '427 Nick Inlet', 'Rubie_Schaden@yahoo.com', '1-255-753-1581 x017');
+INSERT INTO instructor (id, contact_person_id) VALUES ('281a004b-dccb-42a3-8ed2-c1a148d7d907', '281a004b-dccb-42a3-8ed2-c1a148d7d907');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('459206b5-8a67-4027-9bc9-dd8b892c3122', 'Gloves', 'Supervisor', 52, 993);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('15937cb6-185d-4321-bbeb-d3f21c520695', '2023-11-16T23:54:34.173Z', '2023-11-18T08:44:09.366Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('980f661e-cbfa-45aa-a8c3-2ee0e516ad89', 'Braden', 'Altenwerth', '251230031', '334 Wilfrid Course', 'Sterling_McClure30@gmail.com', '(626) 900-6291');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('980f661e-cbfa-45aa-a8c3-2ee0e516ad89', 144, '980f661e-cbfa-45aa-a8c3-2ee0e516ad89');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('856e4b18-26ce-4cec-aadf-178de6b388cd', 'Angela', 'Runolfsson', '337088437', '981 Kris Street', 'Braeden_Heller@gmail.com', '843-225-7532 x7557');
+INSERT INTO instructor (id, contact_person_id) VALUES ('856e4b18-26ce-4cec-aadf-178de6b388cd', '856e4b18-26ce-4cec-aadf-178de6b388cd');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('e41100c7-9ccd-431e-a2a1-4bc9ae43ffa6', 'Cheese', 'Manager', 17, 954);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('cdfb08a9-6cf7-4c03-8728-3074142fb602', '2023-11-16T11:36:27.788Z', '2023-11-17T21:37:42.910Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('432f3734-abc0-4800-ba33-87f3e2f0d8a7', 'Miller', 'Adams', '165331524', '61383 Chauncey Manor', 'Leanne_Bailey@gmail.com', '497-393-7841');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('432f3734-abc0-4800-ba33-87f3e2f0d8a7', 323, '432f3734-abc0-4800-ba33-87f3e2f0d8a7');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('922a9f4e-4e33-4188-8d24-6c61d92b81ea', 'Nelle', 'Effertz', '666331389', '03710 Ernie Gardens', 'Anderson.Gaylord@yahoo.com', '822-609-5664 x95798');
+INSERT INTO instructor (id, contact_person_id) VALUES ('922a9f4e-4e33-4188-8d24-6c61d92b81ea', '922a9f4e-4e33-4188-8d24-6c61d92b81ea');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('13056e80-9273-4472-a352-aa7a73617fbd', 'Bike', 'Liaison', 66, 277);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('00110ee2-5181-45bb-99e4-47acae71dbe5', '2023-11-16T14:51:57.615Z', '2023-11-18T04:30:22.809Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('da6c04ad-3fc7-427b-92bf-cf684943bb39', 'Omer', 'Tremblay', '851973729', '57769 Cyrus Junctions', 'Edwin.Marquardt@yahoo.com', '454-428-3966 x9098');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('da6c04ad-3fc7-427b-92bf-cf684943bb39', 134, 'da6c04ad-3fc7-427b-92bf-cf684943bb39');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('93b657a0-ae2e-4b3c-b11d-3220a5cbf657', 'Arno', 'Aufderhar', '966214406', '537 Leuschke Glens', 'Yvonne68@hotmail.com', '1-266-779-6861');
+INSERT INTO instructor (id, contact_person_id) VALUES ('93b657a0-ae2e-4b3c-b11d-3220a5cbf657', '93b657a0-ae2e-4b3c-b11d-3220a5cbf657');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('8c45d428-f967-452c-a3d9-9743fb7682ff', 'Towels', 'Liaison', 77, 526);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('37c7547a-99a7-4394-93ca-1f60f7d5ed04', '2023-11-16T11:05:36.442Z', '2023-11-17T12:52:11.988Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('54cc479a-ee24-47e5-9fa0-1f7ce2cd5ef6', 'Libbie', 'Donnelly', '982246126', '00105 Kamron Locks', 'Enola84@hotmail.com', '(522) 765-7520');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('54cc479a-ee24-47e5-9fa0-1f7ce2cd5ef6', 470, '54cc479a-ee24-47e5-9fa0-1f7ce2cd5ef6');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('f1e81d5c-a356-4d5c-8618-b4b76817b95a', 'Al', 'Thiel', '840808633', '15147 Fausto Point', 'Garrison.Jakubowski15@yahoo.com', '271.910.8398');
+INSERT INTO instructor (id, contact_person_id) VALUES ('f1e81d5c-a356-4d5c-8618-b4b76817b95a', 'f1e81d5c-a356-4d5c-8618-b4b76817b95a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('6d4ea04e-7300-4399-826d-bcf422d7ef59', 'Keyboard', 'Director', 25, 726);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('2ab22a06-1d07-491f-b590-435b7997b972', '2023-11-16T20:26:22.622Z', '2023-11-17T23:47:32.104Z');
+INSERT INTO instrument_type (name) VALUES ('Rubber');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('97ff4ed3-aaf3-4ceb-bea8-c2be3c0aa195', 'Grayce', 'Rau', '941550782', '45754 Toy Track', 'Kelsie_Schuppe@yahoo.com', '729-906-4736 x077');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('97ff4ed3-aaf3-4ceb-bea8-c2be3c0aa195', 302, '97ff4ed3-aaf3-4ceb-bea8-c2be3c0aa195');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a9c14a7b-21bb-4fa4-ac3a-7f1748ac010c', 'Spencer', 'Sauer', '435969914', '9300 Beth Mall', 'Zackery_Abbott@yahoo.com', '626.486.8928 x9965');
+INSERT INTO instructor (id, contact_person_id) VALUES ('a9c14a7b-21bb-4fa4-ac3a-7f1748ac010c', 'a9c14a7b-21bb-4fa4-ac3a-7f1748ac010c');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('08bc2ad7-5d6f-4365-8f5c-b0da3f6cd662', 'Hat', 'Representative', 64, 674);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('9212eda0-8be1-4533-b45d-d6cf7a0d3a1f', '2023-11-16T21:24:29.442Z', '2023-11-18T01:18:52.860Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('fb03f6ce-6d47-45d1-bb01-1f496c07e31d', 'Alta', 'Leuschke', '298793241', '856 Friedrich Cliff', 'Janice.MacGyver@yahoo.com', '(911) 543-7688');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('fb03f6ce-6d47-45d1-bb01-1f496c07e31d', 386, 'fb03f6ce-6d47-45d1-bb01-1f496c07e31d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('0b8dbf8f-7fa0-4b08-8080-7f90f827a305', 'Americo', 'Lowe', '478092713', '899 Kuphal Harbor', 'Lavada.Willms@yahoo.com', '791.886.2142');
+INSERT INTO instructor (id, contact_person_id) VALUES ('0b8dbf8f-7fa0-4b08-8080-7f90f827a305', '0b8dbf8f-7fa0-4b08-8080-7f90f827a305');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('87b11599-6976-46fe-9ab3-de41072b5a25', 'Cheese', 'Consultant', 99, 699);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('4f730426-0e4d-47c6-a682-cc96102aa185', '2023-11-16T20:26:05.067Z', '2023-11-18T02:14:01.323Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('fdadd2a7-06b7-41b4-8b16-c44f0376e1ec', 'Jaquelin', 'Prosacco', '144161952', '554 OConner Vista', 'Eldred_Hermann38@yahoo.com', '1-287-312-1501 x56043');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('fdadd2a7-06b7-41b4-8b16-c44f0376e1ec', 439, 'fdadd2a7-06b7-41b4-8b16-c44f0376e1ec');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d675ffdc-8920-42a9-b919-2bf7bb5ce315', 'Kaley', 'Green', '884017799', '6562 Walter Throughway', 'Angelina_Collier14@hotmail.com', '257-802-7132 x3659');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d675ffdc-8920-42a9-b919-2bf7bb5ce315', 'd675ffdc-8920-42a9-b919-2bf7bb5ce315');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('3c986ea2-8574-445e-9a30-82238c3e19bf', 'Pizza', 'Architect', 24, 501);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('cd141c38-1a88-4123-bb84-399db6a98643', '2023-11-16T16:54:47.509Z', '2023-11-17T11:34:39.789Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('c0053709-3ca8-4057-b452-1bac8743672c', 'German', 'Walsh', '188510638', '5303 Kihn Viaduct', 'Marcel.Larkin92@gmail.com', '424.651.0718');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('c0053709-3ca8-4057-b452-1bac8743672c', 171, 'c0053709-3ca8-4057-b452-1bac8743672c');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('353e1085-e2ab-4d5c-84b0-38cf76f6b90e', 'Leora', 'Hodkiewicz', '660641130', '526 Alessandra Plains', 'Darien78@hotmail.com', '(544) 609-9654');
+INSERT INTO instructor (id, contact_person_id) VALUES ('353e1085-e2ab-4d5c-84b0-38cf76f6b90e', '353e1085-e2ab-4d5c-84b0-38cf76f6b90e');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('5eeb7395-e603-4780-bd25-d5d26e989fad', 'Soap', 'Strategist', 73, 438);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('bfa9befe-1aba-4dff-afb2-6015aebe4725', '2023-11-16T11:35:19.323Z', '2023-11-17T16:57:36.215Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('28d34414-e8bd-4acd-88fb-4c525d7fab24', 'Kitty', 'Crist', '730308097', '93156 Dicki Spring', 'Edwardo.Cartwright45@yahoo.com', '446-835-4324');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('28d34414-e8bd-4acd-88fb-4c525d7fab24', 357, '28d34414-e8bd-4acd-88fb-4c525d7fab24');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5064abfe-b25b-4c02-9151-ee2ce91fa45a', 'Thaddeus', 'Moore', '497469334', '953 Medhurst Spring', 'Edmond_Adams@hotmail.com', '1-662-660-2182 x97702');
+INSERT INTO instructor (id, contact_person_id) VALUES ('5064abfe-b25b-4c02-9151-ee2ce91fa45a', '5064abfe-b25b-4c02-9151-ee2ce91fa45a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('3858210e-27c8-4d5d-b6f4-c7759a26698f', 'Cheese', 'Representative', 89, 686);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('1bcf7858-37c9-4cf1-b5c7-5e8c6de6dcf6', '2023-11-16T16:42:54.242Z', '2023-11-18T01:56:21.913Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('96e9d27e-ee23-4066-b622-075988f804a9', 'Leilani', 'Balistreri', '605016327', '507 Etha Orchard', 'Brooklyn.Steuber@hotmail.com', '561.412.0354 x81101');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('96e9d27e-ee23-4066-b622-075988f804a9', 172, '96e9d27e-ee23-4066-b622-075988f804a9');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('5330ff07-8685-4ffa-a546-f98d12ad6cc1', 'Ara', 'Ryan', '111930712', '51137 Pierce Estates', 'Loyce51@hotmail.com', '279-462-2310 x56099');
+INSERT INTO instructor (id, contact_person_id) VALUES ('5330ff07-8685-4ffa-a546-f98d12ad6cc1', '5330ff07-8685-4ffa-a546-f98d12ad6cc1');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('0f81188e-6899-4494-baad-7516c43ecefd', 'Fish', 'Planner', 42, 146);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('44ab8d12-5f87-4a44-8d58-aab079e1b2cc', '2023-11-17T00:52:31.636Z', '2023-11-18T06:31:05.828Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('2c100c7f-0a4d-4e94-b37c-f5e7f21a9ea9', 'Maida', 'Mayert', '488234840', '34048 Christina Square', 'Donna90@yahoo.com', '(422) 549-9947');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('2c100c7f-0a4d-4e94-b37c-f5e7f21a9ea9', 294, '2c100c7f-0a4d-4e94-b37c-f5e7f21a9ea9');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d20f06a1-b39c-4b3b-947d-3e25410d83e4', 'Scotty', 'Farrell', '259308818', '68584 Donnelly Parkway', 'Alexandria_Schroeder@hotmail.com', '1-907-739-4153 x862');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d20f06a1-b39c-4b3b-947d-3e25410d83e4', 'd20f06a1-b39c-4b3b-947d-3e25410d83e4');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('20efc535-864f-4bac-b7fe-30bbaa2276d1', 'Shirt', 'Developer', 22, 243);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('b71b8620-8630-4ee8-9d3c-3e0f7816242e', '2023-11-16T18:30:04.907Z', '2023-11-17T09:10:33.740Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('7a7a9438-1bec-4c2e-8115-56f974d24f63', 'Cathrine', 'Homenick', '264283914', '576 Volkman Islands', 'Monty_Heaney@gmail.com', '693.319.9248 x157');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('7a7a9438-1bec-4c2e-8115-56f974d24f63', 376, '7a7a9438-1bec-4c2e-8115-56f974d24f63');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('28ecf01d-4b4c-4f3a-9889-45f56779e489', 'Joan', 'Kling', '504861025', '617 Della Fort', 'Zachariah_Koepp@gmail.com', '393.953.6998');
+INSERT INTO instructor (id, contact_person_id) VALUES ('28ecf01d-4b4c-4f3a-9889-45f56779e489', '28ecf01d-4b4c-4f3a-9889-45f56779e489');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('4041e8b0-768b-4222-8a27-4b0a27a8ec72', 'Bacon', 'Strategist', 38, 414);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('a58941d4-e330-4452-9cf6-4a484ea0e9d4', '2023-11-16T22:41:39.456Z', '2023-11-18T04:02:48.271Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4f51550c-56ec-40bb-a2df-b70a712a20f8', 'Stephen', 'Trantow', '974278779', '63869 Rosario Lodge', 'Madonna62@yahoo.com', '1-614-694-1851 x8693');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4f51550c-56ec-40bb-a2df-b70a712a20f8', 384, '4f51550c-56ec-40bb-a2df-b70a712a20f8');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('aa774ab1-0b76-4eda-8511-4aed02346606', 'Vincent', 'Satterfield', '530964155', '772 Raphaelle Prairie', 'Houston91@gmail.com', '1-631-361-8965 x2959');
+INSERT INTO instructor (id, contact_person_id) VALUES ('aa774ab1-0b76-4eda-8511-4aed02346606', 'aa774ab1-0b76-4eda-8511-4aed02346606');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('5120f464-089f-4bec-aaaf-264487b8e504', 'Ball', 'Supervisor', 72, 192);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('3d3ddc89-c431-44c7-973e-80034229973b', '2023-11-16T18:41:11.730Z', '2023-11-17T14:19:07.219Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('23bd9c9d-22cf-40df-9866-9be19c417c06', 'Judah', 'Champlin', '680037029', '6020 Weimann Turnpike', 'Meagan_Lesch0@yahoo.com', '798-817-4941 x3369');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('23bd9c9d-22cf-40df-9866-9be19c417c06', 235, '23bd9c9d-22cf-40df-9866-9be19c417c06');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('accdf7b8-cc53-456a-9559-6c04f645a0f0', 'Edmond', 'Bergstrom', '103814915', '7691 Delphia Glen', 'Cornell44@hotmail.com', '410.710.2405 x43615');
+INSERT INTO instructor (id, contact_person_id) VALUES ('accdf7b8-cc53-456a-9559-6c04f645a0f0', 'accdf7b8-cc53-456a-9559-6c04f645a0f0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('564d3eeb-4ba9-49a4-9725-f32631d45ca7', 'Shirt', 'Developer', 84, 159);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('32689bba-b05a-4c48-a047-c2e3ccdd8caa', '2023-11-16T15:09:37.928Z', '2023-11-18T01:44:34.167Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4e319b2e-d8b0-4031-abff-abce334b263f', 'Dedrick', 'Upton', '759415868', '5537 Wisoky Circle', 'Lydia.Ankunding@gmail.com', '(560) 451-9248 x4235');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4e319b2e-d8b0-4031-abff-abce334b263f', 101, '4e319b2e-d8b0-4031-abff-abce334b263f');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('43fbb6dd-4e35-410a-8290-c6b636fa7682', 'Kaylah', 'Thompson', '396000561', '94701 Mertz Locks', 'Nannie_Wintheiser@yahoo.com', '628.212.2967 x1769');
+INSERT INTO instructor (id, contact_person_id) VALUES ('43fbb6dd-4e35-410a-8290-c6b636fa7682', '43fbb6dd-4e35-410a-8290-c6b636fa7682');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('bf31b8fc-0e23-4c04-8c4d-bf36a42c9072', 'Computer', 'Executive', 46, 937);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('496174ef-c323-46e7-be8d-1ea887b5938a', '2023-11-16T09:17:21.000Z', '2023-11-18T06:57:58.917Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1bbfe9a8-c0e8-404c-bd6e-363b9618d739', 'Justen', 'Larkin', '676145020', '535 Crooks Freeway', 'Abbey.Kohler@gmail.com', '1-729-368-6968 x1312');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('1bbfe9a8-c0e8-404c-bd6e-363b9618d739', 444, '1bbfe9a8-c0e8-404c-bd6e-363b9618d739');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d9d2dae5-1e7b-4830-a9a7-dfcb62bb4ca6', 'Hardy', 'Huels', '986761027', '03329 Dawn Road', 'Jameson_Nikolaus1@hotmail.com', '232.393.9395');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d9d2dae5-1e7b-4830-a9a7-dfcb62bb4ca6', 'd9d2dae5-1e7b-4830-a9a7-dfcb62bb4ca6');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('43070bd5-6527-4dfa-a175-8708014f97a8', 'Chicken', 'Analyst', 33, 524);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('5e6c532c-4f09-4310-95bf-fcd0363a7196', '2023-11-16T10:37:41.961Z', '2023-11-17T18:30:43.170Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a2e31a16-2eb0-45fe-8041-85caf1f9123a', 'Zaria', 'Streich', '279986019', '845 Barrows Lock', 'Antonia76@yahoo.com', '(618) 333-3082');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a2e31a16-2eb0-45fe-8041-85caf1f9123a', 166, 'a2e31a16-2eb0-45fe-8041-85caf1f9123a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('ae2daca5-38c3-4ef1-85bd-460abf8e2017', 'Noemie', 'Rau', '595517079', '002 Schroeder Key', 'Ines_Bruen@gmail.com', '999.533.9502');
+INSERT INTO instructor (id, contact_person_id) VALUES ('ae2daca5-38c3-4ef1-85bd-460abf8e2017', 'ae2daca5-38c3-4ef1-85bd-460abf8e2017');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('a8a3970e-36d2-44fe-82f3-908e71cc683e', 'Ball', 'Facilitator', 24, 916);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('2cb6a935-1f10-4ff2-bbfa-9294e425793d', '2023-11-16T22:36:58.269Z', '2023-11-17T12:40:23.265Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('3cde5bf1-1c3a-46a5-afbd-b5a69c8971b5', 'Burnice', 'Bechtelar', '937636223', '5599 Roy Rue', 'Danny.Toy0@hotmail.com', '1-796-255-8909');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('3cde5bf1-1c3a-46a5-afbd-b5a69c8971b5', 142, '3cde5bf1-1c3a-46a5-afbd-b5a69c8971b5');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d794bf0b-71f2-4636-8004-0af5b11458a2', 'Loyal', 'Langosh', '179889728', '85669 Stroman Isle', 'Eulah0@gmail.com', '1-930-954-7266 x3957');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d794bf0b-71f2-4636-8004-0af5b11458a2', 'd794bf0b-71f2-4636-8004-0af5b11458a2');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('ff2bba1b-1cc0-434b-aa25-37a1f2a494ca', 'Bacon', 'Strategist', 88, 227);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('c81fe5f8-7bf5-4913-8e13-8501f43d2a72', '2023-11-16T23:41:53.475Z', '2023-11-18T03:10:35.228Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a6b62f27-a388-4995-93d8-3179822fefc3', 'Katelyn', 'Grady', '931188993', '711 Lizeth Lodge', 'Christine5@gmail.com', '210-974-8024');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a6b62f27-a388-4995-93d8-3179822fefc3', 397, 'a6b62f27-a388-4995-93d8-3179822fefc3');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('9b56b2b4-e24d-4583-90c4-c9dd9f9764e0', 'Tate', 'Haley', '538442380', '7840 Osinski Fields', 'Devan.Kuhic@yahoo.com', '1-313-325-9626 x6512');
+INSERT INTO instructor (id, contact_person_id) VALUES ('9b56b2b4-e24d-4583-90c4-c9dd9f9764e0', '9b56b2b4-e24d-4583-90c4-c9dd9f9764e0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('0f4355ac-9538-4da4-a501-f4bf73be32d9', 'Shoes', 'Manager', 85, 865);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('81873f27-02a6-4031-84c2-728531876aaa', '2023-11-17T04:40:43.298Z', '2023-11-17T22:46:36.216Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a03bc2bb-2c5f-49f8-8bc2-39d33f369951', 'Simone', 'Mann', '990747893', '828 Simonis Village', 'Camden.Kovacek@yahoo.com', '(988) 696-7211');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a03bc2bb-2c5f-49f8-8bc2-39d33f369951', 350, 'a03bc2bb-2c5f-49f8-8bc2-39d33f369951');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('81b2259d-81b6-4c6e-bf00-5122575e10e1', 'Rosa', 'Ziemann', '602924732', '49025 Hazel Lakes', 'Travis34@gmail.com', '1-211-679-2480 x692');
+INSERT INTO instructor (id, contact_person_id) VALUES ('81b2259d-81b6-4c6e-bf00-5122575e10e1', '81b2259d-81b6-4c6e-bf00-5122575e10e1');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('3521ce66-e758-47c3-b34d-a83a4af5c299', 'Towels', 'Director', 69, 573);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('9b58fbae-74b3-46a4-8683-a4f0c2ffa279', '2023-11-16T15:30:45.001Z', '2023-11-17T19:04:25.201Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('72255269-f35a-4739-bae0-9bf2374be70a', 'Lesly', 'Klocko', '200093722', '493 OKeefe Drive', 'Twila.Gaylord@gmail.com', '(268) 890-0442 x9014');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('72255269-f35a-4739-bae0-9bf2374be70a', 279, '72255269-f35a-4739-bae0-9bf2374be70a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('96a462e2-41cf-4c33-a38e-3b15731f741f', 'Rowena', 'Fadel', '872899098', '967 Gulgowski Run', 'Lucio.Lehner@yahoo.com', '267-612-9429');
+INSERT INTO instructor (id, contact_person_id) VALUES ('96a462e2-41cf-4c33-a38e-3b15731f741f', '96a462e2-41cf-4c33-a38e-3b15731f741f');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('2563d725-4c48-4539-b1e8-97b30d6d3f08', 'Salad', 'Engineer', 89, 916);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('79ff23b4-c13a-44e7-be57-b7790fbb8b74', '2023-11-17T01:33:11.615Z', '2023-11-17T12:20:18.792Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('53dcb897-966a-4e35-9327-5fbfe393293b', 'Robert', 'Hand', '490368643', '566 Brakus Prairie', 'Eleanora95@gmail.com', '359-515-5904');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('53dcb897-966a-4e35-9327-5fbfe393293b', 456, '53dcb897-966a-4e35-9327-5fbfe393293b');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1f7139f4-c29a-4f6f-a8d3-8616c0bfa5f9', 'Samanta', 'Kuhn', '867283923', '56533 Marcelle Lake', 'Travis.Flatley@gmail.com', '1-820-774-5528 x225');
+INSERT INTO instructor (id, contact_person_id) VALUES ('1f7139f4-c29a-4f6f-a8d3-8616c0bfa5f9', '1f7139f4-c29a-4f6f-a8d3-8616c0bfa5f9');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('b332f53e-1a5e-4ded-a5f8-a60645886f09', 'Keyboard', 'Agent', 29, 716);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('13696f00-a8da-47b5-9922-1d1f65f5ba0a', '2023-11-17T04:04:28.582Z', '2023-11-17T22:53:57.331Z');
+INSERT INTO instrument_type (name) VALUES ('Metal');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('b03beab7-eb24-4cf0-84cb-6b82e1303ef3', 'Candida', 'Lubowitz', '285968843', '24334 Malcolm Points', 'Francesco.Dietrich@yahoo.com', '894-461-1423');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('b03beab7-eb24-4cf0-84cb-6b82e1303ef3', 459, 'b03beab7-eb24-4cf0-84cb-6b82e1303ef3');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e056dcf3-649e-4cad-917f-f4aa13fded14', 'Ubaldo', 'Larson', '921990455', '162 Cielo Causeway', 'Hollie4@hotmail.com', '(932) 258-3217');
+INSERT INTO instructor (id, contact_person_id) VALUES ('e056dcf3-649e-4cad-917f-f4aa13fded14', 'e056dcf3-649e-4cad-917f-f4aa13fded14');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('cc1dca6d-32a0-47ce-92ce-9fffc3cb6a87', 'Mouse', 'Specialist', 56, 531);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('071b76b2-99e8-42e8-9a83-2e9eb133a2b7', '2023-11-16T23:07:01.618Z', '2023-11-17T16:46:33.435Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('0e3d20f0-2af7-4cd6-8967-1fc6bceb2a1d', 'Rigoberto', 'Wehner', '261075400', '18175 Keara Cape', 'Monserrate_Stehr@hotmail.com', '1-702-536-2594 x6396');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('0e3d20f0-2af7-4cd6-8967-1fc6bceb2a1d', 301, '0e3d20f0-2af7-4cd6-8967-1fc6bceb2a1d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('82fe2443-2a81-4d17-bc86-61bd63508689', 'Adrienne', 'Rohan', '791879627', '6235 Destiny River', 'Whitney.Ziemann19@gmail.com', '274-805-2379 x843');
+INSERT INTO instructor (id, contact_person_id) VALUES ('82fe2443-2a81-4d17-bc86-61bd63508689', '82fe2443-2a81-4d17-bc86-61bd63508689');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('fad27958-2b6d-4d03-8e20-f1d45857dcde', 'Fish', 'Manager', 3, 967);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('7c242140-97a9-44f3-9a29-f60cbed1f763', '2023-11-16T10:40:49.400Z', '2023-11-18T05:40:13.227Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('90a1e6c5-3fe0-4ff2-909d-6ee757f325cc', 'Abby', 'Emmerich', '268777721', '5528 Ledner Stravenue', 'Vincenza_Rowe@yahoo.com', '231-846-8556 x87629');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('90a1e6c5-3fe0-4ff2-909d-6ee757f325cc', 147, '90a1e6c5-3fe0-4ff2-909d-6ee757f325cc');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('f3a2afd2-dfd2-4106-aca0-181d72e7ee68', 'Nash', 'Sporer', '565314953', '1920 Mariam Mountains', 'Carson.Bradtke@yahoo.com', '855-330-0361');
+INSERT INTO instructor (id, contact_person_id) VALUES ('f3a2afd2-dfd2-4106-aca0-181d72e7ee68', 'f3a2afd2-dfd2-4106-aca0-181d72e7ee68');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('90a5895b-99b3-462e-af1c-231bc79614a0', 'Shirt', 'Administrator', 9, 879);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('cd0078cb-12f3-4aad-82f6-2b25f9aec506', '2023-11-17T04:23:58.799Z', '2023-11-17T13:33:20.106Z');
+INSERT INTO instrument_type (name) VALUES ('Wooden');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e01c86c9-43bd-4163-811b-6e5ceccd8c85', 'Carleton', 'Bergnaum', '292977017', '1766 Calista Squares', 'Ernestina_Hane43@yahoo.com', '568.636.2875');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('e01c86c9-43bd-4163-811b-6e5ceccd8c85', 297, 'e01c86c9-43bd-4163-811b-6e5ceccd8c85');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('352dfe36-2af6-4990-a7c0-21937fefc247', 'Jeremy', 'Auer', '600272230', '985 Abner Extensions', 'Fletcher48@hotmail.com', '(632) 361-9263');
+INSERT INTO instructor (id, contact_person_id) VALUES ('352dfe36-2af6-4990-a7c0-21937fefc247', '352dfe36-2af6-4990-a7c0-21937fefc247');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('989b1279-4983-4908-a7e9-b658a3986321', 'Ball', 'Specialist', 87, 870);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('cab4b4db-fbee-4a87-8615-331796f62a45', '2023-11-16T21:15:33.637Z', '2023-11-17T23:07:27.342Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8684ce32-ad32-48ad-a69f-a70fe08d2e61', 'Lauriane', 'Maggio', '196515129', '4928 Darron Vista', 'Leone5@hotmail.com', '860.489.7924 x76697');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('8684ce32-ad32-48ad-a69f-a70fe08d2e61', 419, '8684ce32-ad32-48ad-a69f-a70fe08d2e61');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a2be1e03-9176-4ad2-914b-0186d42bbea9', 'Maureen', 'Cartwright', '259292060', '6042 Donald Underpass', 'Mossie.Conn4@yahoo.com', '299.769.0134');
+INSERT INTO instructor (id, contact_person_id) VALUES ('a2be1e03-9176-4ad2-914b-0186d42bbea9', 'a2be1e03-9176-4ad2-914b-0186d42bbea9');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('24ce58f9-d56d-4298-9454-3738485307f7', 'Fish', 'Consultant', 63, 323);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('ed928b2f-b2ee-403a-a816-7bc31bc71a39', '2023-11-16T23:21:23.220Z', '2023-11-17T10:44:26.976Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('45bcffbc-ba6b-4827-a1fd-60441dfcc5cc', 'Dorian', 'Hackett', '577277200', '9402 Murphy Islands', 'Mckenzie25@gmail.com', '(890) 614-9505');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('45bcffbc-ba6b-4827-a1fd-60441dfcc5cc', 475, '45bcffbc-ba6b-4827-a1fd-60441dfcc5cc');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('df1fceca-9828-4a48-8b8a-59e9cfde8e0e', 'Jettie', 'Macejkovic', '827082163', '652 Ratke Tunnel', 'Vickie_Mraz@hotmail.com', '1-744-502-2129');
+INSERT INTO instructor (id, contact_person_id) VALUES ('df1fceca-9828-4a48-8b8a-59e9cfde8e0e', 'df1fceca-9828-4a48-8b8a-59e9cfde8e0e');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('25b6bcbe-aa6c-4798-a61e-8c307bb79d6f', 'Tuna', 'Assistant', 73, 971);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('a5455e94-1e6b-4b42-96bd-8cac974f6fb2', '2023-11-16T15:56:59.414Z', '2023-11-18T01:41:12.576Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a669655f-c9b6-408d-bbf9-f08a1525c6ee', 'Hobart', 'Kerluke', '566203913', '7913 Bechtelar Throughway', 'Misael33@yahoo.com', '1-965-785-9814 x74431');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a669655f-c9b6-408d-bbf9-f08a1525c6ee', 224, 'a669655f-c9b6-408d-bbf9-f08a1525c6ee');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('6adf705d-25fb-4342-9ec1-344d7216f478', 'Stephania', 'Bartell', '565515983', '4324 Celine Mountain', 'Hipolito87@hotmail.com', '1-435-520-0143 x1003');
+INSERT INTO instructor (id, contact_person_id) VALUES ('6adf705d-25fb-4342-9ec1-344d7216f478', '6adf705d-25fb-4342-9ec1-344d7216f478');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('2dc3eb99-68da-4f9d-a8d5-f20c277622c0', 'Chips', 'Director', 3, 396);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('e47725d4-7c9e-4159-bdda-fea5089a1c49', '2023-11-17T07:24:11.060Z', '2023-11-17T18:44:01.980Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('283daa6a-9cd7-4c0a-ae6e-6f73af8ba74c', 'Marquise', 'Nitzsche', '451307519', '1532 Kub River', 'Hilbert51@hotmail.com', '1-507-946-8190 x3035');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('283daa6a-9cd7-4c0a-ae6e-6f73af8ba74c', 137, '283daa6a-9cd7-4c0a-ae6e-6f73af8ba74c');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('f9165021-096d-4f5f-8b80-e9a1a3411db7', 'Jettie', 'Spinka', '299139031', '3153 Roberta Estate', 'Omari35@gmail.com', '1-609-495-9734 x21888');
+INSERT INTO instructor (id, contact_person_id) VALUES ('f9165021-096d-4f5f-8b80-e9a1a3411db7', 'f9165021-096d-4f5f-8b80-e9a1a3411db7');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('ac98ff65-f301-4758-9c36-fff236252ea4', 'Shoes', 'Agent', 34, 997);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('122ed4b6-a7ef-4cfe-a8e1-d1ae0c504a86', '2023-11-16T09:14:18.179Z', '2023-11-18T05:58:18.500Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('4c4f3109-180a-4808-a1aa-4f19052a1666', 'Deborah', 'Muller', '128969205', '40452 Mueller Pine', 'Paolo.Mitchell@yahoo.com', '1-396-705-0280');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('4c4f3109-180a-4808-a1aa-4f19052a1666', 121, '4c4f3109-180a-4808-a1aa-4f19052a1666');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e240d27e-27c7-48f7-8b7f-f5f043e77c75', 'Micaela', 'Gerhold', '611832509', '6805 Kemmer Neck', 'Cathryn68@gmail.com', '1-878-606-9475 x1806');
+INSERT INTO instructor (id, contact_person_id) VALUES ('e240d27e-27c7-48f7-8b7f-f5f043e77c75', 'e240d27e-27c7-48f7-8b7f-f5f043e77c75');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('0f622ff3-8c05-47f7-891f-647c30b2582e', 'Bike', 'Supervisor', 70, 552);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('b49e7f9f-9e3e-43fe-b7b1-e4f5bf8a84b8', '2023-11-17T00:57:15.749Z', '2023-11-18T01:06:06.506Z');
+INSERT INTO instrument_type (name) VALUES ('Cotton');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('c9e02146-0f25-4110-9105-6cbdf2c8799a', 'Rachael', 'Gutmann', '862820655', '634 Considine Fort', 'Lexus74@hotmail.com', '1-670-507-3771 x37473');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('c9e02146-0f25-4110-9105-6cbdf2c8799a', 463, 'c9e02146-0f25-4110-9105-6cbdf2c8799a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8bec2894-7f38-46c8-90b1-6a69954a98f7', 'Tomasa', 'Gutmann', '623566059', '566 Mack Summit', 'Granville_Bashirian29@gmail.com', '(490) 270-5355 x71698');
+INSERT INTO instructor (id, contact_person_id) VALUES ('8bec2894-7f38-46c8-90b1-6a69954a98f7', '8bec2894-7f38-46c8-90b1-6a69954a98f7');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('d8537c6d-2e6d-44ef-ba18-74030af2c655', 'Tuna', 'Designer', 35, 279);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('ebd4f098-5f2f-4ba0-a126-805162b71c8c', '2023-11-16T23:57:28.465Z', '2023-11-18T07:17:23.358Z');
+INSERT INTO instrument_type (name) VALUES ('Plastic');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('384a841f-43ef-474c-9128-44bd2784d601', 'Hunter', 'Kohler', '568578939', '52032 Heller Canyon', 'Mohamed69@hotmail.com', '486-709-5115');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('384a841f-43ef-474c-9128-44bd2784d601', 390, '384a841f-43ef-474c-9128-44bd2784d601');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d03289d9-f5c8-489f-8e76-3b035bef657a', 'Charles', 'Lubowitz', '423004548', '9844 OKon Well', 'Newton15@yahoo.com', '1-419-319-8961 x43105');
+INSERT INTO instructor (id, contact_person_id) VALUES ('d03289d9-f5c8-489f-8e76-3b035bef657a', 'd03289d9-f5c8-489f-8e76-3b035bef657a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('2cdf0fe4-6227-4a5a-9668-c51bbab537cb', 'Chair', 'Designer', 34, 105);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('7071af88-2efc-4dbf-9f93-994ed46c61c8', '2023-11-16T22:24:30.683Z', '2023-11-18T07:32:46.499Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('69988f22-00e2-4f77-bd50-40c7dfdf747e', 'Alden', 'Hettinger', '495226535', '4448 Darrell Glen', 'Norval_Dietrich89@hotmail.com', '342.609.5490 x065');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('69988f22-00e2-4f77-bd50-40c7dfdf747e', 167, '69988f22-00e2-4f77-bd50-40c7dfdf747e');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('116d019c-a4bc-421e-ac54-c7e01fc0905b', 'Devante', 'Watsica', '168022117', '59293 John Harbors', 'Harmon_Wunsch@yahoo.com', '639-630-3080');
+INSERT INTO instructor (id, contact_person_id) VALUES ('116d019c-a4bc-421e-ac54-c7e01fc0905b', '116d019c-a4bc-421e-ac54-c7e01fc0905b');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('849148b8-6b36-4008-bf31-c40ef2c35007', 'Shoes', 'Assistant', 52, 482);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('66e211d1-5bd9-4e19-8d1a-2fa4660b3a41', '2023-11-17T06:11:27.195Z', '2023-11-17T12:26:32.617Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('0490119a-a054-4292-96e6-feb3d272e866', 'Camryn', 'Greenholt', '845507969', '90174 Kunze Mountain', 'Ena.Rempel61@yahoo.com', '951-885-5834');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('0490119a-a054-4292-96e6-feb3d272e866', 335, '0490119a-a054-4292-96e6-feb3d272e866');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('ed9c617a-1179-438a-9468-d71a7de0a6cf', 'Aaron', 'Labadie', '773440002', '29179 Jaquelin Vista', 'Gavin_Brekke68@yahoo.com', '350-245-1413 x110');
+INSERT INTO instructor (id, contact_person_id) VALUES ('ed9c617a-1179-438a-9468-d71a7de0a6cf', 'ed9c617a-1179-438a-9468-d71a7de0a6cf');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('5dd0a7cd-bf7e-4155-82c5-101b253cd033', 'Towels', 'Liaison', 59, 221);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('0bc30330-8af7-4ff7-925e-905793178b49', '2023-11-17T03:20:43.327Z', '2023-11-17T22:28:16.320Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('7cb63506-926d-421b-8953-828ad8252fbf', 'Karelle', 'Deckow', '641365593', '39328 Jeffery Bridge', 'Lilly.Hermiston33@gmail.com', '(793) 532-3854');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('7cb63506-926d-421b-8953-828ad8252fbf', 122, '7cb63506-926d-421b-8953-828ad8252fbf');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('1c205051-b59f-45f2-90ba-56220ecfaaff', 'Ike', 'Walter', '160256808', '029 Raynor Union', 'Kasandra39@yahoo.com', '1-541-593-3926 x0272');
+INSERT INTO instructor (id, contact_person_id) VALUES ('1c205051-b59f-45f2-90ba-56220ecfaaff', '1c205051-b59f-45f2-90ba-56220ecfaaff');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('490a6cf2-208f-451f-b39b-40227030f144', 'Gloves', 'Manager', 9, 695);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('af0af51e-ca8e-42e3-bf88-836fe29e19a3', '2023-11-16T20:27:33.197Z', '2023-11-18T04:38:52.330Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('60e75e02-9107-4e60-92f8-2e8828c7123d', 'Marley', 'Ryan', '711248044', '45677 DAmore Streets', 'Fletcher.Hettinger@hotmail.com', '847-611-0339 x8402');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('60e75e02-9107-4e60-92f8-2e8828c7123d', 336, '60e75e02-9107-4e60-92f8-2e8828c7123d');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('3729c4a8-9d2e-4d1a-95d0-4b363d4fcd28', 'Adalberto', 'Jacobson', '973416626', '19323 Schinner Canyon', 'Terrell.Beier@hotmail.com', '1-517-494-5479');
+INSERT INTO instructor (id, contact_person_id) VALUES ('3729c4a8-9d2e-4d1a-95d0-4b363d4fcd28', '3729c4a8-9d2e-4d1a-95d0-4b363d4fcd28');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('b6254f95-66a5-4b36-8f52-c7b4db291e3c', 'Car', 'Designer', 40, 829);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('5a07a506-5d37-4e59-addd-7fe7d9edf257', '2023-11-17T05:21:18.288Z', '2023-11-17T16:47:01.125Z');
+INSERT INTO instrument_type (name) VALUES ('Concrete');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('901e8d8b-1770-4781-9d3a-e56447384c23', 'Shayne', 'Dibbert', '667890061', '9607 Witting Neck', 'Sam.Gleichner14@yahoo.com', '739.656.0178 x83466');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('901e8d8b-1770-4781-9d3a-e56447384c23', 181, '901e8d8b-1770-4781-9d3a-e56447384c23');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('77e4d985-cbe0-41f8-a688-962aecb18566', 'Kendra', 'Hirthe', '645647527', '3885 Beahan Road', 'Cornelius84@gmail.com', '881.831.7833 x9865');
+INSERT INTO instructor (id, contact_person_id) VALUES ('77e4d985-cbe0-41f8-a688-962aecb18566', '77e4d985-cbe0-41f8-a688-962aecb18566');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('ccce8ca6-1897-4118-bca7-45d518e16e40', 'Bacon', 'Consultant', 46, 507);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('334dc4dd-2d91-426b-915d-e5efdf41e094', '2023-11-16T19:03:57.136Z', '2023-11-18T00:22:24.349Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a7fb4da6-670b-4d23-a1ae-741e93f15591', 'Hadley', 'Ferry', '254358232', '1945 Erwin Shores', 'Quinn_White19@gmail.com', '1-677-718-5243');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('a7fb4da6-670b-4d23-a1ae-741e93f15591', 485, 'a7fb4da6-670b-4d23-a1ae-741e93f15591');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('fe4eebf3-761c-4855-a077-e3be92a4d1c3', 'Elton', 'Carter', '557428841', '64240 Dallin Stravenue', 'Ashtyn_Beer@yahoo.com', '996.958.5560 x15395');
+INSERT INTO instructor (id, contact_person_id) VALUES ('fe4eebf3-761c-4855-a077-e3be92a4d1c3', 'fe4eebf3-761c-4855-a077-e3be92a4d1c3');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('83ce62a9-ea4f-4025-b03c-0a2daa4432c8', 'Shoes', 'Facilitator', 51, 783);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('6859a063-be07-4dd6-a7c4-15076524b227', '2023-11-16T18:00:10.084Z', '2023-11-18T06:20:38.474Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('723af81d-9175-4dcf-be25-ac22cc776855', 'Houston', 'Legros', '551779559', '48162 Dickens Shoal', 'Walker_OConner@yahoo.com', '(737) 472-7878');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('723af81d-9175-4dcf-be25-ac22cc776855', 100, '723af81d-9175-4dcf-be25-ac22cc776855');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('467c7fee-2ad8-43b2-91cf-0ced686bf88a', 'Deborah', 'Hansen', '576796228', '779 Hansen Trail', 'Florine.Hane5@hotmail.com', '532.537.1840');
+INSERT INTO instructor (id, contact_person_id) VALUES ('467c7fee-2ad8-43b2-91cf-0ced686bf88a', '467c7fee-2ad8-43b2-91cf-0ced686bf88a');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('86e76522-a0eb-4c07-bf72-4e3d46b0ee07', 'Ball', 'Consultant', 42, 920);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('8d492e47-00e6-4dd9-b704-1936b850b758', '2023-11-16T22:58:33.755Z', '2023-11-17T17:16:31.591Z');
+INSERT INTO instrument_type (name) VALUES ('Steel');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('e1a0da56-f073-40fb-acfa-d765560a923a', 'Liana', 'Goodwin', '119320518', '940 Braun Corners', 'Freddie.McCullough@yahoo.com', '(335) 318-4388 x257');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('e1a0da56-f073-40fb-acfa-d765560a923a', 444, 'e1a0da56-f073-40fb-acfa-d765560a923a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('f7c96a71-ab1f-4f62-8449-0c1c8d31881c', 'Orlando', 'Feest', '293299976', '63016 Green Pass', 'Charlotte.Kihn64@gmail.com', '742.567.7659');
+INSERT INTO instructor (id, contact_person_id) VALUES ('f7c96a71-ab1f-4f62-8449-0c1c8d31881c', 'f7c96a71-ab1f-4f62-8449-0c1c8d31881c');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('1927cabd-93a8-4cd1-a5ab-316843b00744', 'Chicken', 'Orchestrator', 41, 789);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('9c58f9be-9d98-4f41-ba7d-60c8ff913617', '2023-11-16T11:15:50.861Z', '2023-11-18T00:22:15.854Z');
+INSERT INTO instrument_type (name) VALUES ('Granite');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('cbed04b8-16df-43b9-bf17-f539b2bc8328', 'Carson', 'Kunde', '574265351', '209 Grover Springs', 'Pauline.Schulist76@hotmail.com', '1-734-568-4907 x92397');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('cbed04b8-16df-43b9-bf17-f539b2bc8328', 416, 'cbed04b8-16df-43b9-bf17-f539b2bc8328');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('15083ea9-af15-4a98-a460-0ba3851401d0', 'Ellsworth', 'Sporer', '973059194', '93836 Yasmine Village', 'Hillary.Jakubowski9@yahoo.com', '(647) 211-4744');
+INSERT INTO instructor (id, contact_person_id) VALUES ('15083ea9-af15-4a98-a460-0ba3851401d0', '15083ea9-af15-4a98-a460-0ba3851401d0');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('7c108520-0b39-4dcf-89f6-d3718b251a59', 'Fish', 'Engineer', 78, 140);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('d3d64445-d902-41c1-8d65-d3878acf1b02', '2023-11-17T03:18:17.893Z', '2023-11-18T07:20:50.249Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('420a907c-a22e-4727-946b-f4f0b89c5042', 'Shaun', 'Frami', '536750504', '1682 Hintz Ville', 'Javon_McLaughlin@hotmail.com', '420-338-3715 x095');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('420a907c-a22e-4727-946b-f4f0b89c5042', 471, '420a907c-a22e-4727-946b-f4f0b89c5042');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('a756eaf6-4d58-4dfb-9bb5-98be97b41ce6', 'Elroy', 'Wiegand', '455062036', '254 Creola Highway', 'Emmanuelle73@gmail.com', '1-274-362-9879 x3572');
+INSERT INTO instructor (id, contact_person_id) VALUES ('a756eaf6-4d58-4dfb-9bb5-98be97b41ce6', 'a756eaf6-4d58-4dfb-9bb5-98be97b41ce6');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('d57e79d9-b38f-48df-aaed-ef2bd9fe244c', 'Bike', 'Producer', 38, 787);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('fe1c53b8-0457-4256-ac77-ebd0cfb3cac3', '2023-11-16T12:14:45.936Z', '2023-11-17T18:15:51.552Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('6387a51b-b778-4c5d-ba1d-0280ef75131a', 'Mervin', 'Grimes', '936047095', '67240 Hulda Wall', 'Tiffany_Denesik@gmail.com', '1-602-352-5541 x507');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('6387a51b-b778-4c5d-ba1d-0280ef75131a', 445, '6387a51b-b778-4c5d-ba1d-0280ef75131a');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('2ba719d8-426e-4cd8-a9f9-39c62ac9431f', 'Taurean', 'Crooks', '524882015', '77299 Smith Curve', 'Norval93@gmail.com', '(681) 720-6297 x4229');
+INSERT INTO instructor (id, contact_person_id) VALUES ('2ba719d8-426e-4cd8-a9f9-39c62ac9431f', '2ba719d8-426e-4cd8-a9f9-39c62ac9431f');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('a078daa0-4dcb-4ce7-ad89-6d0f3df85353', 'Tuna', 'Associate', 25, 768);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('e1e19487-c57f-4a74-a634-380d6665daf6', '2023-11-17T02:35:57.717Z', '2023-11-17T22:38:34.736Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('9b1bc903-4f50-4482-ae24-05f2fc68b04b', 'Lonny', 'Padberg', '941903885', '2796 Bo Estates', 'Noemie.Yundt64@hotmail.com', '463-345-8686 x272');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('9b1bc903-4f50-4482-ae24-05f2fc68b04b', 147, '9b1bc903-4f50-4482-ae24-05f2fc68b04b');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('90c3e03a-a819-4b83-8bc5-dd0fd5733152', 'Twila', 'Wiegand', '480992231', '770 Dicki Camp', 'Teresa_Huel16@yahoo.com', '1-654-692-7044 x9015');
+INSERT INTO instructor (id, contact_person_id) VALUES ('90c3e03a-a819-4b83-8bc5-dd0fd5733152', '90c3e03a-a819-4b83-8bc5-dd0fd5733152');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('1d30dddd-fa2a-403a-aa5f-afa89c2635f6', 'Ball', 'Specialist', 32, 313);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('ddc8ea6c-47d9-4028-ae0b-31b2c5b15028', '2023-11-17T06:53:53.301Z', '2023-11-17T18:24:33.151Z');
+INSERT INTO instrument_type (name) VALUES ('Fresh');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('81f6841e-6d6c-4f3d-8ae6-3c551e39a66f', 'Jordi', 'Gutkowski', '558760116', '9340 Tomasa Oval', 'Elliott_Heidenreich53@gmail.com', '272.870.8150 x00694');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('81f6841e-6d6c-4f3d-8ae6-3c551e39a66f', 216, '81f6841e-6d6c-4f3d-8ae6-3c551e39a66f');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('774b50b6-013f-41a3-b81f-33b0906aa905', 'Ransom', 'Stehr', '666900199', '0635 Jerrold Islands', 'Marcia_Grimes66@yahoo.com', '582-588-2165 x951');
+INSERT INTO instructor (id, contact_person_id) VALUES ('774b50b6-013f-41a3-b81f-33b0906aa905', '774b50b6-013f-41a3-b81f-33b0906aa905');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('4593c228-0e70-4f84-84f5-b0139c46e325', 'Soap', 'Supervisor', 1, 432);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('493781dc-2dce-4e5f-9c53-c3476ef4cee2', '2023-11-16T18:17:42.981Z', '2023-11-17T10:47:01.406Z');
+INSERT INTO instrument_type (name) VALUES ('Soft');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('32a979c2-3ac9-4376-be83-c69f9bfdecfa', 'Jermey', 'Schultz', '698869035', '47115 Dovie Canyon', 'Elva49@hotmail.com', '1-690-235-6027 x563');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('32a979c2-3ac9-4376-be83-c69f9bfdecfa', 371, '32a979c2-3ac9-4376-be83-c69f9bfdecfa');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8c5a942c-f21a-4b59-a70b-b7cb46b02aee', 'Jamal', 'Hills', '242197599', '1682 Green Union', 'Marcelo.Green60@yahoo.com', '779.623.9855 x5396');
+INSERT INTO instructor (id, contact_person_id) VALUES ('8c5a942c-f21a-4b59-a70b-b7cb46b02aee', '8c5a942c-f21a-4b59-a70b-b7cb46b02aee');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('9cabe3ab-7ff6-44a0-9868-b9e36de5958a', 'Soap', 'Producer', 29, 215);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('ac24b4fd-0d20-468b-a48e-cffa4ee28c0a', '2023-11-17T08:15:43.966Z', '2023-11-17T15:49:10.693Z');
+INSERT INTO instrument_type (name) VALUES ('Rubber');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('d29db9db-1cae-497b-b658-877af1e2effd', 'Elody', 'Abshire', '124522499', '0360 Lubowitz Shoal', 'Clint.Yundt8@gmail.com', '(881) 661-1425');
+INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('d29db9db-1cae-497b-b658-877af1e2effd', 409, 'd29db9db-1cae-497b-b658-877af1e2effd');
+INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('8e2e9ebe-fe48-4661-9d6d-f47305a195df', 'Dale', 'Parker', '797806619', '48462 McClure Port', 'Casper86@gmail.com', '776-631-2869');
+INSERT INTO instructor (id, contact_person_id) VALUES ('8e2e9ebe-fe48-4661-9d6d-f47305a195df', '8e2e9ebe-fe48-4661-9d6d-f47305a195df');
+INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('aef8b900-326c-4bae-a8e5-d974798ada5d', 'Shirt', 'Technician', 74, 294);
+INSERT INTO time_slot (id, start_time, end_time) VALUES ('54125f14-8642-46a2-a69a-822510fe3076', '2023-11-17T03:00:42.465Z', '2023-11-17T10:55:45.132Z');
+INSERT INTO instrument_type (name) VALUES ('Frozen');

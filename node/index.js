@@ -1,47 +1,57 @@
 const fs = require('fs');
 const faker = require('faker');
 
+// Sanitization function to remove single and double quotes from strings
+const sanitizeString = (str) => str.replace(/['"]+/g, '');
+
 const generateDummyData = () => {
-  const uuidv4 = faker.datatype.uuid;
-  const randomNumber = faker.datatype.number;
   const dummyData = [];
+  const personIds = [];
+  const studentIds = [];
+  const instructorIds = [];
+  const priceIds = [];
+  const timeSlotIds = [];
+  const instrumentTypeNames = [];
 
-  // Generate data for 'person'
-  const personId = uuidv4();
-  dummyData.push(`INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('${personId}', '${faker.name.firstName()}', '${faker.name.lastName()}', '${randomNumber({ min: 100000000, max: 999999999 })}', '${faker.address.streetAddress()}', '${faker.internet.email()}', '${faker.phone.phoneNumber()}');`);
+  for (let i = 0; i < 100; i++) {
+    // Generate data for 'person'
+    const personId = faker.datatype.uuid();
+    personIds.push(personId);
+    dummyData.push(`INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('${personId}', '${sanitizeString(faker.name.firstName())}', '${sanitizeString(faker.name.lastName())}', '${faker.datatype.number({ min: 100000000, max: 999999999 }).toString()}', '${sanitizeString(faker.address.streetAddress())}', '${sanitizeString(faker.internet.email())}', '${sanitizeString(faker.phone.phoneNumber())}');`);
 
-  // Generate data for 'instructor'
-  const instructorId = uuidv4();
-  dummyData.push(`INSERT INTO instructor (id, contact_person_id) VALUES ('${instructorId}', '${personId}');`);
+    // Generate data for 'student' inheriting 'person'
+    const studentId = personId; // Inherited, so it's the same ID
+    studentIds.push(studentId);
+    dummyData.push(`INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('${studentId}', ${faker.datatype.number({ min: 100, max: 500 })}, '${personId}');`);
 
-  // Generate data for 'student'
-  const studentId = uuidv4();
-  dummyData.push(`INSERT INTO student (id, max_instrument_rent_amount, contact_person_id) VALUES ('${studentId}', ${randomNumber({ min: 100, max: 500 })}, '${personId}');`);
+    // Generate data for 'instructor' inheriting 'person'
+    const instructorId = faker.datatype.uuid();
+    instructorIds.push(instructorId);
+    dummyData.push(`INSERT INTO person (id, first_name, last_name, social_security, address, email, phone) VALUES ('${instructorId}', '${sanitizeString(faker.name.firstName())}', '${sanitizeString(faker.name.lastName())}', '${faker.datatype.number({ min: 100000000, max: 999999999 }).toString()}', '${sanitizeString(faker.address.streetAddress())}', '${sanitizeString(faker.internet.email())}', '${sanitizeString(faker.phone.phoneNumber())}');`);
+    dummyData.push(`INSERT INTO instructor (id, contact_person_id) VALUES ('${instructorId}', '${instructorId}');`);
 
-  // Generate data for 'instrument_type'
-  const instrumentTypeId = uuidv4();
-  dummyData.push(`INSERT INTO instrument_type (id, name) VALUES ('${instrumentTypeId}', '${faker.commerce.productName()}');`);
+    // Generate data for 'price'
+    const priceId = faker.datatype.uuid();
+    priceIds.push(priceId);
+    dummyData.push(`INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('${priceId}', '${sanitizeString(faker.commerce.product())}', '${sanitizeString(faker.name.jobType())}', ${faker.datatype.number({ min: 0, max: 100 })}, ${faker.datatype.number({ min: 100, max: 1000 })});`);
 
-  // Generate data for 'price'
-  const priceId = uuidv4();
-  dummyData.push(`INSERT INTO price (id, class_type, level, sibling_discount, cost) VALUES ('${priceId}', 'Basic', 'Beginner', ${randomNumber({ min: 0, max: 100 })}, ${randomNumber({ min: 100, max: 1000 })});`);
+    // Generate data for 'time_slot'
+    const timeSlotId = faker.datatype.uuid();
+    timeSlotIds.push(timeSlotId);
+    dummyData.push(`INSERT INTO time_slot (id, start_time, end_time) VALUES ('${timeSlotId}', '${faker.date.recent().toISOString()}', '${faker.date.soon().toISOString()}');`);
 
-  // Generate data for 'time_slot'
-  const timeSlotId = uuidv4();
-  dummyData.push(`INSERT INTO time_slot (id, start_time, end_time) VALUES ('${timeSlotId}', '${faker.date.recent().toISOString()}', '${faker.date.soon().toISOString()}');`);
+    // Generate data for 'instrument_type'
+    const instrumentTypeName = sanitizeString(faker.commerce.productMaterial());
+    instrumentTypeNames.push(instrumentTypeName);
+    dummyData.push(`INSERT INTO instrument_type (name) VALUES ('${instrumentTypeName}');`);
 
-  // Generate data for 'ensemble_lesson'
-  const ensembleLessonId = uuidv4();
-  dummyData.push(`INSERT INTO ensemble_lesson (id, level, min_students, max_students, genre, price_id, instructor_id, time_slot_id) VALUES ('${ensembleLessonId}', 'Intermediate', ${randomNumber({ min: 1, max: 10 })}, ${randomNumber({ min: 10, max: 30 })}, '${faker.music.genre()}', '${priceId}', '${instructorId}', '${timeSlotId}');`);
-
-  // Assuming 'ensemble_lesson_student' is a joining table between 'ensemble_lesson' and 'student'
-  dummyData.push(`INSERT INTO ensemble_lesson_student (id, ensemble_lesson_id, student_id, price, state) VALUES ('${uuidv4()}', '${ensembleLessonId}', '${studentId}', ${randomNumber({ min: 10, max: 100 })}, 'active');`);
-
-  // ... Continue for other entities ...
+    // ... Additional entities and their relationships ...
+  }
 
   return dummyData.join('\n');
 };
 
-// Write the data to a SQL file
-fs.writeFileSync('dummy_data.sql', generateDummyData(), 'utf-8');
-console.log('Dummy SQL data file created!');
+const dummyDataSql = generateDummyData();
+const filePath = './dummy_data.sql';
+fs.writeFileSync(filePath, dummyDataSql, 'utf-8');
+console.log(`Dummy SQL data file created at: ${filePath}`);
