@@ -26,7 +26,8 @@ CREATE TABLE "student"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   "max_instrument_rent_amount" INT NOT NULL DEFAULT 2,
   "contact_person_id" uuid NOT NULL,
-  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE
+  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE,
+  CONSTRAINT rented_instruemnts_constraint CHECK((SELECT COUNT(*) FROM instrument WHERE instrument.student_id = student.id)<3)
 ) INHERITS (person);
 
 CREATE TABLE "sibling"(
@@ -143,3 +144,5 @@ CREATE TABLE "ensemble_lesson_instrument"(
   CONSTRAINT fk_ensemble_lesson_id FOREIGN KEY (ensemble_lesson_id) REFERENCES "ensemble_lesson"(id) ON DELETE CASCADE,
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE
 );
+
+
