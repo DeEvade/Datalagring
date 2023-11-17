@@ -17,7 +17,7 @@ CREATE TABLE "person"(
   "first_name" VARCHAR(256) NOT NULL,
   "last_name" VARCHAR(256) NOT NULL,
   "social_security" VARCHAR(256) NOT NULL,
-  "adress" VARCHAR(256) NOT NULL,
+  "address" VARCHAR(256) NOT NULL,
   "email" VARCHAR(256) NOT NULL,
   "phone" VARCHAR(256) NOT NULL
 );
@@ -135,6 +135,14 @@ CREATE TABLE "instructor_instrument"(
   PRIMARY KEY (instructor_id, instrument_type_name),
   CONSTRAINT fk_instructor_id FOREIGN KEY (instructor_id) REFERENCES "instructor"(id) ON DELETE CASCADE,
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE
+);
+
+CREATE TABLE "instructor_time_slots"(
+  "instructor_id" uuid NOT NULL,
+  "time_slot_id" uuid NOT NULL,
+  PRIMARY KEY (instructor_id, time_slot_id),
+  CONSTRAINT fk_time_slot_id FOREIGN KEY (time_slot_id) REFERENCES "time_slot"(id) ON DELETE CASCADE,
+  CONSTRAINT fk_instructor_id FOREIGN KEY (instructor_id) REFERENCES "instructor"(id) ON DELETE CASCADE
 );
 
 CREATE TABLE "ensemble_lesson_instrument"(
