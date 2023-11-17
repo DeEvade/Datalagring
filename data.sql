@@ -11,7 +11,7 @@ VALUES
   ('Mallory','Middleton','506-3768 Lorem Av.',27010474665,'ipsum.dolor@google.org','1-683-517-1713'),
   ('Samantha','Mcknight','P.O. Box 409, 8719 A, Street',11717268689,'fermentum.metus.aenean@yahoo.edu','1-729-781-9578');
 
-INSERT INTO student (first_name,last_nme,social_security,address,email,phone)
+INSERT INTO student (first_name,last_name,social_security,address,email,phone)
 VALUES
   ('Roth','Stokes',90463299893,'3384 Elementum Av.','lorem.donec@outlook.com','1-280-114-5697'),
   ('Thor','Hardy',100467707163,'P.O. Box 243, 711 Ullamcorper Avenue','in.scelerisque.scelerisque@aol.com','1-416-234-4104'),
