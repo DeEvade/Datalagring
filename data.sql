@@ -143,13 +143,35 @@ values
 	('Violin'),
 	('Drums');
 
+-- INSERT INTO group_lesson_student (group_lesson_id, student_id, price, state) 
+-- VALUES (
+--     'group_lesson_id', -- Här måste det spcifika id ges
+--     'student_id', -- Den hör studenten vill anmäla sig till denna lektion
+--     (SELECT cost
+--      FROM price p
+--      JOIN group_lesson gl ON p.id = gl.price_id
+--      WHERE gl.id = 'group_lesson_id'),
+--     'accepted'
+-- );
+
 INSERT INTO group_lesson_student (group_lesson_id, student_id, price, state) 
 VALUES (
-    'group_lesson_id', -- Här måste det spcifika id ges
-    'studen_id', -- Den hör studenten vill anmäla sig till denna lektion
-    (SELECT cost
-     FROM price p
-     JOIN group_lesson gl ON p.id = gl.price_id
-     WHERE gl.id = '6eb25141-96ee-468f-bff4-b2d085126eca'),
+    'group_lesson_id',
+    'student_id',
+    (
+        SELECT 
+            CASE 
+                WHEN EXISTS (
+                    SELECT 1
+                    FROM sibling s
+                    WHERE (s.student_1 = 'student_id' OR s.student_2 = 'student_id')
+                )
+                THEN p.cost - COALESCE(p.sibling_discount, 0)
+                ELSE p.cost
+            END AS price
+        FROM price p
+        JOIN group_lesson gl ON p.id = gl.price_id 
+        WHERE gl.id = 'group_lesson_id'
+    ),
     'accepted'
 );
