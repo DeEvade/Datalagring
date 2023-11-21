@@ -162,7 +162,23 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER check_max_instruments
-    BEFORE UPDATE ON instrument
+CREATE OR REPLACE TRIGGER check_max_instruments
+    BEFORE INSERT OR UPDATE ON instrument
     FOR EACH ROW
     EXECUTE FUNCTION check_instrument_rent_limit();
+
+
+CREATE OR REPLACE FUNCTION check_ensemble_student_limit()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF (SELECT COUNT(*) FROM ensemble_lesson_student WHERE student_id = NEW.student_id) >= max_students THEN
+    RAISE EXCEPTION 'Lesson cannot have any more students';
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER check_max_ensemble_students
+    BEFORE INSERT OR UPDATE ON ensemble_lesson_student
+    FOR EACH ROW
+    EXECUTE FUNCTION check_ensemble_student_limit();
