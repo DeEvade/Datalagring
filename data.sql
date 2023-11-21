@@ -1,15 +1,15 @@
-INSERT INTO instructor (first_name,last_name,address,social_security,email,phone)
+INSERT INTO instructor (id, first_name,last_name,address,social_security,email,phone)
 VALUES
-  ('Cheryl','Sexton','Ap #503-9312 Dolor Avenue',19673099082,'nibh.sit@hotmail.ca','1-248-825-0072'),
-  ('Orla','Fox','Ap #190-6484 Ligula. Street',26794555769,'cras.eget@protonmail.net','1-768-545-5782'),
-  ('Joshua','Kirk','402-2717 Vitae Ave',65531227785,'pede.nunc.sed@hotmail.edu','1-593-267-6936'),
-  ('Britanni','Hawkins','Ap #736-3679 Lectus St.',92682135763,'ullamcorper.duis@yahoo.com','1-313-661-0551'),
-  ('Mariam','Clay','Ap #453-2750 Velit. Av.',6342546396,'egestas@aol.edu','1-483-122-7457'),
-  ('Deirdre','Davenport','Ap #342-7665 Mattis Rd.',63301114713,'ornare.in@outlook.couk','1-477-777-5527'),
-  ('Astra','Foster','Ap #902-8529 Aliquet Rd.',46191796867,'consequat.enim@icloud.ca','1-644-246-1563'),
-  ('Reed','Coffey','Ap #366-7674 Aliquam, St.',89768078249,'egestas.lacinia@aol.net','1-830-325-0201'),
-  ('Mallory','Middleton','506-3768 Lorem Av.',27010474665,'ipsum.dolor@google.org','1-683-517-1713'),
-  ('Samantha','Mcknight','P.O. Box 409, 8719 A, Street',11717268689,'fermentum.metus.aenean@yahoo.edu','1-729-781-9578');
+  ('1aa82abe-8a8c-4788-bb23-81bfab28df05', 'Cheryl','Sexton','Ap #503-9312 Dolor Avenue',19673099082,'nibh.sit@hotmail.ca','1-248-825-0072'),
+  ('5ec8527b-4bfe-48c1-9320-89b0dde7a848', 'Orla','Fox','Ap #190-6484 Ligula. Street',26794555769,'cras.eget@protonmail.net','1-768-545-5782'),
+  ('d83e58d9-5d52-469c-b730-4946753b092c','Joshua','Kirk','402-2717 Vitae Ave',65531227785,'pede.nunc.sed@hotmail.edu','1-593-267-6936'),
+  ('2a801b51-2081-4564-9520-77c28cc2e0ba','Britanni','Hawkins','Ap #736-3679 Lectus St.',92682135763,'ullamcorper.duis@yahoo.com','1-313-661-0551'),
+  ('467ba9ff-6075-4591-9b7a-576743a6f0b1','Mariam','Clay','Ap #453-2750 Velit. Av.',6342546396,'egestas@aol.edu','1-483-122-7457'),
+  ('448fcb25-0c74-453b-b585-c29a90b0db5e','Deirdre','Davenport','Ap #342-7665 Mattis Rd.',63301114713,'ornare.in@outlook.couk','1-477-777-5527'),
+  ('a04ea39e-987c-4935-8f9e-63a91a455f3f', 'Astra','Foster','Ap #902-8529 Aliquet Rd.',46191796867,'consequat.enim@icloud.ca','1-644-246-1563'),
+  ('5d6d3385-ec3d-41ad-8b49-252d08bb7435', 'Reed','Coffey','Ap #366-7674 Aliquam, St.',89768078249,'egestas.lacinia@aol.net','1-830-325-0201'),
+  ('9fc73c16-5806-4215-a56e-1d3dbc30abd2', 'Mallory','Middleton','506-3768 Lorem Av.',27010474665,'ipsum.dolor@google.org','1-683-517-1713'),
+  ('d031728b-53fb-4b4b-ad72-f57ffa1753c1','Samantha','Mcknight','P.O. Box 409, 8719 A, Street',11717268689,'fermentum.metus.aenean@yahoo.edu','1-729-781-9578');
 
 INSERT INTO student ("id", "first_name", "last_name", "social_security", "address", "email", "phone")
 VALUES
@@ -57,6 +57,7 @@ VALUES
   ('1b1094b5-5a90-4f38-9b85-3cf609345f05', 'Kareem', 'Mcfarland', 146415263222, '819-675 Fringilla Av.', 'ultricies@outlook.edu', '1-664-848-6024'),
   ('89e102f4-d1f8-49ef-a914-8fb8cc39bec7', 'Yasir', 'Lambert',,58676452457,'5194 Rhoncus. St.','ut.molestie.in@google.com','1-836-524-6789');
 
+  
 
 INSERT INTO time_slot (start_time, end_time)
 VALUES
@@ -67,37 +68,27 @@ VALUES
   ('2023-02-10 10:00:00', '2023-01-10 12:00:00'), -- First individual lesson
   ('2023-02-10 10:00:00', '2023-01-10 12:00:00'); -- Second individual lesson
 
-insert into price('class_type', 'level', 'sibling_discount', 'cost')
+insert into price("id", "class_type", "level", "sibling_discount", "cost")
 values 
-	('group', 'beginner', null, 200),
-	('group', 'intermediate', null, 400),
-	('group', 'advanced', null, 800),
-	('ensemble', 'beginner', null, 300),
-	('ensemble', 'intermediate', null, 600),
-	('ensemble', 'advanced', null, 900),
-	('individual', 'beginner', null, 500),
-	('individual', 'intermediate', null, 1000),
-	('individual', 'advanced', null, 2000);
+	('3ced36ff-78fb-4685-9e61-21e12284bf34', 'group', 'beginner', 50, 200),
+	('797aa906-fba9-4b17-b9c3-27d60f75cb38', 'group', 'intermediate', 50, 400),
+	('01989eed-db7d-40a2-81fb-fa72c01486ff', 'group', 'advanced', 50, 800),
+	('ed0e122a-945d-40bb-8a76-47e1ca6f8110', 'ensemble', 'beginner', 50, 300),
+	('59f9d235-22b3-4680-ad5c-e215132ff368', 'ensemble', 'intermediate', 50, 600),
+	('7cb8200c-f725-4280-afd7-09816162ba93', 'ensemble', 'advanced', 50, 900),
+	('5c43a49c-5814-4cba-b2be-927d9bafd257', 'individual', 'beginner', 50, 500),
+	('b5196ad2-b17a-429c-826e-102568695a3d', 'individual', 'intermediate', 50, 1000),
+	('c61ad9e2-ee1e-4b28-bf6e-def39ad481e6', 'individual', 'advanced', 50, 2000);
 
-insert into instrument_type(name)
+insert into instrument_type("name")
 values
 	('Piano'),
 	('Guitar'),
 	('Violin'),
 	('Drums');
 
--- INSERT INTO group_lesson_student (group_lesson_id, student_id, price, state) 
--- VALUES (
---     'group_lesson_id', -- Här måste det spcifika id ges
---     'student_id', -- Den hör studenten vill anmäla sig till denna lektion
---     (SELECT cost
---      FROM price p
---      JOIN group_lesson gl ON p.id = gl.price_id
---      WHERE gl.id = 'group_lesson_id'),
---     'accepted'
--- );
 
-INSERT INTO group_lesson_student (group_lesson_id, student_id, price, state) 
+INSERT INTO group_lesson_student ("group_lesson_id", "student_id", "price", "state") 
 VALUES (
     'group_lesson_id',
     'student_id',

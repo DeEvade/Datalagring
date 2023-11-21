@@ -24,7 +24,6 @@ CREATE TABLE "person"(
 
 CREATE TABLE "student"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-
   "contact_person_id" uuid,
   CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE
 ) INHERITS (person);
