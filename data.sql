@@ -1,4 +1,4 @@
-insert into person("id", "first_name", "last_name", "social_security", "address", "email", "phone")
+insert into contact_person("id", "first_name", "last_name", "social_security", "address", "email", "phone")
 values
   ('48b4119d-5ba3-499d-b63c-8d91b4ae2afd','Mercedes','Hardin',196793749642,'P.O. Box 344, 5786 Arcu St.','id@yahoo.ca','1-278-535-7423'),
   ('2ee63014-a8b9-448f-9ba5-0e1f457f5bd1','Debra','Wilkinson',197103692399,'P.O. Box 540, 550 Cubilia Ave','non@yahoo.couk','1-627-476-5687'),
@@ -157,24 +157,24 @@ values
 	('Drums'),
   ('Trumpet');
  
-INSERT INTO group_lesson("id","level", "min_students", "max_students", "price_id", "instructor_id", "instrument_type_name", "time_slot_id")
+INSERT INTO group_lesson("id","level", "min_students", "max_students", "price_id", "instructor_id", "instrument_type_name", "time_slot_id", "instructor_pay")
 VALUES 
-    ('51357404-e596-47c9-8533-282edde5a620','beginner', 3, 6, '3ced36ff-78fb-4685-9e61-21e12284bf34', '1aa82abe-8a8c-4788-bb23-81bfab28df05', 'Piano', '9b82efbc-f6dd-4798-96d1-4e8a6f1942d8'), 
+    ('51357404-e596-47c9-8533-282edde5a620','beginner', 3, 6, '3ced36ff-78fb-4685-9e61-21e12284bf34', '1aa82abe-8a8c-4788-bb23-81bfab28df05', 'Piano', '9b82efbc-f6dd-4798-96d1-4e8a6f1942d8','200'), 
     -- Lesson at time 2023-01-10 10:00-12:00 with Cheryl Sexton
-    ('512eba75-756a-43ef-9feb-3d5d35f0b03e','intermediate', 5, 10,'797aa906-fba9-4b17-b9c3-27d60f75cb38', '1aa82abe-8a8c-4788-bb23-81bfab28df05', 'Violin', 'b2493d12-df09-4208-81d8-a4b6688df8fe');
+    ('512eba75-756a-43ef-9feb-3d5d35f0b03e','intermediate', 5, 10,'797aa906-fba9-4b17-b9c3-27d60f75cb38', '1aa82abe-8a8c-4788-bb23-81bfab28df05', 'Violin', 'b2493d12-df09-4208-81d8-a4b6688df8fe', '400');
     -- Lesson with Cheryl Sexton at time: 2023-01-10 13:00-15:00
-INSERT INTO ensemble_lesson("id","level", "min_students", "max_students", "genre" ,"price_id", "instructor_id", "time_slot_id")
+INSERT INTO ensemble_lesson("id","level", "min_students", "max_students", "genre" ,"price_id", "instructor_id", "time_slot_id","instructor_pay")
 VALUES 
-    ('ce9b764e-df3d-4f01-8274-820d131b30ab','beginner', 3, 6, 'Clasical', 'ed0e122a-945d-40bb-8a76-47e1ca6f8110', '1aa82abe-8a8c-4788-bb23-81bfab28df05', '7f647f2a-7978-44ae-ad2b-8838cd2582da'), 
+    ('ce9b764e-df3d-4f01-8274-820d131b30ab','beginner', 3, 6, 'Clasical', 'ed0e122a-945d-40bb-8a76-47e1ca6f8110', '1aa82abe-8a8c-4788-bb23-81bfab28df05', '7f647f2a-7978-44ae-ad2b-8838cd2582da', '300'), 
     -- Lesson with Cheryl Sexton at time: 2023-01-11 10:00-12:0
-    ('406c66e3-0c8f-4fbc-96cc-a573fab45c06','intermediate', 5, 10, 'Rock','59f9d235-22b3-4680-ad5c-e215132ff368', 'd83e58d9-5d52-469c-b730-4946753b092c', '9353e8bc-21a9-4a89-8e34-ca9dfcbc3783');
+    ('406c66e3-0c8f-4fbc-96cc-a573fab45c06','intermediate', 5, 10, 'Rock','59f9d235-22b3-4680-ad5c-e215132ff368', 'd83e58d9-5d52-469c-b730-4946753b092c', '9353e8bc-21a9-4a89-8e34-ca9dfcbc3783', '600');
     -- Lesson with Joshua Kirk at time: 2023-02-10 10:00-12:00
 
-INSERT INTO individual_lesson("id","level", "price_id", "instructor_id", "time_slot_id", "instrument_type_name")
+INSERT INTO individual_lesson("id","level", "price_id", "instructor_id", "time_slot_id", "instrument_type_name", "instructor_pay")
 VALUES 
-  ('ec31c6bd-331f-4014-bb9d-9f07670003cc','Advanced', 'c61ad9e2-ee1e-4b28-bf6e-def39ad481e6', '9fc73c16-5806-4215-a56e-1d3dbc30abd2','316e34ca-c2a1-484f-b542-a87102d8f6cf', 'Guitar'),
+  ('ec31c6bd-331f-4014-bb9d-9f07670003cc','Advanced', 'c61ad9e2-ee1e-4b28-bf6e-def39ad481e6', '9fc73c16-5806-4215-a56e-1d3dbc30abd2','316e34ca-c2a1-484f-b542-a87102d8f6cf', 'Guitar', '2000'),
   -- Lesson with Mary Middelton at time: 2023-02-11 10:00-12:00
-  ('689a76d9-c9fb-451a-a716-8f0ffd30a8b7','intermediate','b5196ad2-b17a-429c-826e-102568695a3d', '5ec8527b-4bfe-48c1-9320-89b0dde7a848','9b82efbc-f6dd-4798-96d1-4e8a6f1942d8', 'Trumpet');
+  ('689a76d9-c9fb-451a-a716-8f0ffd30a8b7','intermediate','b5196ad2-b17a-429c-826e-102568695a3d', '5ec8527b-4bfe-48c1-9320-89b0dde7a848','9b82efbc-f6dd-4798-96d1-4e8a6f1942d8', 'Trumpet', '100');
   -- Lesson with Orla Fox at time: 2023-01-10 10:00-12:00
 insert into group_lesson_student("group_lesson_id", "student_id", "price", "state")
 values  
@@ -241,7 +241,6 @@ values
 --     'accepted'
 -- );
 
-/*
 insert into instrument("id", "price", "instrument_type_name", "student_id", "time_slot_id")
 values
   ('8bac6acc-e838-403f-a47a-f40eb28d92ab','300','Guitar','d9f8ccfc-339a-4054-b740-cd081886bafe','874f979b-7587-4fe5-aa5b-1678c7cb66e8'), 
@@ -252,8 +251,9 @@ values
   ('d14314e0-1ea3-4de5-b0f2-924fb34f6d1d','1000','Drums','ae8c641f-3657-476f-816e-98b286f02e79','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
   ('128a8cff-9141-4bdd-9ceb-8457ba447704','1500','Violin','6ef1c19e-97fd-4ec5-ae3b-7b1a30d3cb0a','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
   ('3397761b-c1fc-4c18-9a1f-c754ac0df193','900','Trumpet','a7501bd2-4c6c-4981-95e8-ecc41e5d0726','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('3397761b-c1fc-4c18-9a1f-c754ac0df193','1600','Trumpet',NULL,NULL); -- Det finns ett instrument som inte är hyrd av någon
-*/
+  ('59582c91-db72-44d9-b37c-d04b5defde0b','1600','Trumpet',NULL,NULL); -- Det finns ett instrument som inte är hyrd av någon
+
+/*
 insert into instrument("price", "instrument_type_name", "student_id", "time_slot_id")
 values
   ('300','Guitar','d9f8ccfc-339a-4054-b740-cd081886bafe','874f979b-7587-4fe5-aa5b-1678c7cb66e8'), 
@@ -266,6 +266,7 @@ values
   ('900','Trumpet','a7501bd2-4c6c-4981-95e8-ecc41e5d0726','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
   ('1600','Trumpet',NULL,NULL); -- Det finns ett instrument som inte är hyrd av någon
 
+*/
 
 insert into instructor_instrument("instructor_id", "instrument_type_name")
 values

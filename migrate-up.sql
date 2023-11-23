@@ -2,7 +2,7 @@ CREATE TABLE "price"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   "class_type" VARCHAR(256) NOT NULL,
   "level" VARCHAR(256) NOT NULL,
-  "sibling_discount" INT NOT NULL,
+  "sibling_discount" INT not NULL,
   "cost" INT NOT NULL
 );
 
@@ -12,7 +12,7 @@ CREATE TABLE "time_slot"(
   "end_time" TIMESTAMP NOT NULL
 );
 
-CREATE TABLE "person"(
+CREATE TABLE "contact_person"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   "first_name" VARCHAR(256) NOT NULL,
   "last_name" VARCHAR(256) NOT NULL,
@@ -24,9 +24,15 @@ CREATE TABLE "person"(
 
 CREATE TABLE "student"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  "first_name" VARCHAR(256) NOT NULL,
+  "last_name" VARCHAR(256) NOT NULL,
+  "social_security" VARCHAR(256) UNIQUE NOT NULL,
+  "address" VARCHAR(256) NOT NULL,
+  "email" VARCHAR(256) NOT NULL,
+  "phone" VARCHAR(256) NOT null,
   "contact_person_id" uuid,
-  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE
-) INHERITS (person);
+  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "contact_person"(id) ON DELETE CASCADE
+);
 
 CREATE TABLE "sibling"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -39,6 +45,7 @@ CREATE TABLE "sibling"(
 CREATE TABLE "instrument_type"("name" VARCHAR(256) PRIMARY KEY NOT NULL);
 
 CREATE TABLE "instrument"(
+  "id" uuid primary key default gen_random_uuid(),
   "price" INT NOT NULL,
   "instrument_type_name" VARCHAR(256) NOT NULL,
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE,
@@ -51,9 +58,15 @@ CREATE TABLE "instrument"(
 
 CREATE TABLE "instructor"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  "first_name" VARCHAR(256) NOT NULL,
+  "last_name" VARCHAR(256) NOT NULL,
+  "social_security" VARCHAR(256) UNIQUE NOT NULL,
+  "address" VARCHAR(256) NOT NULL,
+  "email" VARCHAR(256) NOT NULL,
+  "phone" VARCHAR(256) NOT null,
   "contact_person_id" uuid,
-  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "person"(id) ON DELETE CASCADE
-) INHERITS (person);
+  CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "contact_person"(id) ON DELETE CASCADE
+);
 
 CREATE TABLE "group_lesson"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -62,6 +75,7 @@ CREATE TABLE "group_lesson"(
   "max_students" INT NOT NULL,
   "price_id" uuid NOT NULL,
   "instructor_id" uuid NOT NULL,
+  "instructor_pay" INT not null, 
   "instrument_type_name" VARCHAR(256) NOT NULL,
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE,
   CONSTRAINT fk_instructor_id FOREIGN KEY (instructor_id) REFERENCES "instructor"(id) ON DELETE CASCADE,
@@ -78,6 +92,7 @@ CREATE TABLE "ensemble_lesson"(
   "genre" VARCHAR(256),
   "price_id" uuid NOT NULL,
   "instructor_id" uuid NOT NULL,
+  "instructor_pay" INT not null, 
   CONSTRAINT fk_instructor_id FOREIGN KEY (instructor_id) REFERENCES "instructor"(id) ON DELETE CASCADE,
   CONSTRAINT fk_price_id FOREIGN KEY (price_id) REFERENCES "price"(id) ON DELETE CASCADE,
   "time_slot_id" uuid NOT NULL,
@@ -91,6 +106,7 @@ CREATE TABLE "individual_lesson"(
   "time_slot_id" uuid NOT NULL,
   "instructor_id" uuid NOT NULL,
   "instrument_type_name" VARCHAR(256) NOT NULL,
+  "instructor_pay" INT not null, 
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE,
   CONSTRAINT fk_price_id FOREIGN KEY (price_id) REFERENCES "price"(id) ON DELETE CASCADE,
   CONSTRAINT fk_time_slot_id FOREIGN KEY (time_slot_id) REFERENCES "time_slot"(id) ON DELETE CASCADE,
@@ -161,23 +177,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER check_max_instruments
-    BEFORE INSERT OR UPDATE ON instrument
+CREATE TRIGGER check_max_instruments
+    BEFORE UPDATE ON instrument
     FOR EACH ROW
     EXECUTE FUNCTION check_instrument_rent_limit();
+   
 
-
-CREATE OR REPLACE FUNCTION check_ensemble_student_limit()
-RETURNS TRIGGER AS $$
-BEGIN
-  IF (SELECT COUNT(*) FROM ensemble_lesson_student WHERE student_id = NEW.student_id) >= max_students THEN
-    RAISE EXCEPTION 'Lesson cannot have any more students';
-  END IF;
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE OR REPLACE TRIGGER check_max_ensemble_students
-    BEFORE INSERT OR UPDATE ON ensemble_lesson_student
-    FOR EACH ROW
-    EXECUTE FUNCTION check_ensemble_student_limit();
