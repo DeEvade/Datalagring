@@ -18,8 +18,8 @@ CREATE TABLE "contact_person"(
   "last_name" VARCHAR(256) NOT NULL,
   "social_security" VARCHAR(256) UNIQUE NOT NULL,
   "address" VARCHAR(256) NOT NULL,
-  "email" VARCHAR(256) NOT NULL,
-  "phone" VARCHAR(256) NOT NULL
+  "email" VARCHAR(256) UNIQUE NOT NULL,
+  "phone" VARCHAR(256) UNIQUE NOT NULL
 );
 
 CREATE TABLE "student"(
@@ -28,8 +28,8 @@ CREATE TABLE "student"(
   "last_name" VARCHAR(256) NOT NULL,
   "social_security" VARCHAR(256) UNIQUE NOT NULL,
   "address" VARCHAR(256) NOT NULL,
-  "email" VARCHAR(256) NOT NULL,
-  "phone" VARCHAR(256) NOT null,
+  "email" VARCHAR(256) UNIQUE NOT NULL,
+  "phone" VARCHAR(256) UNIQUE NOT NULL
   "contact_person_id" uuid,
   CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "contact_person"(id) ON DELETE CASCADE
 );
@@ -62,8 +62,8 @@ CREATE TABLE "instructor"(
   "last_name" VARCHAR(256) NOT NULL,
   "social_security" VARCHAR(256) UNIQUE NOT NULL,
   "address" VARCHAR(256) NOT NULL,
-  "email" VARCHAR(256) NOT NULL,
-  "phone" VARCHAR(256) NOT null,
+  "email" VARCHAR(256) UNIQUE NOT NULL,
+  "phone" VARCHAR(256) UNIQUE NOT NULL
   "contact_person_id" uuid,
   CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "contact_person"(id) ON DELETE CASCADE
 );
