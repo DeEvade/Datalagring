@@ -20,15 +20,23 @@ ORDER BY
 
 -- QUERY 2
 SELECT 
- 	AS "No of Siblings"
- 	count() AS "No of Students"
+    NumberOfSiblings as "No of siblings",
+    COUNT(*) AS "No of students"
 FROM 
-	sibling s 
-LEFT JOIN student st ON st.id = s.student_1 AND st.id = s.student_2 
+    (SELECT 
+         s.id,
+         COUNT(sibling.student_1) AS NumberOfSiblings
+     FROM 
+         student s 
+     LEFT JOIN 
+         sibling ON s.id = sibling.student_1
+     GROUP BY 
+         s.id)
+GROUP BY 
+    NumberOfSiblings
+ORDER BY 
+    NumberOfSiblings;
 
-GROUP BY
-
-ORDER by 
 
 -- QUERY 3
 SELECT
@@ -52,30 +60,38 @@ HAVING
 ORDER BY
     count(*)  DESC;
 
+
+
+    
+
 -- QUERY 4
-SELECT 
-    TO_CHAR(ts.start_time, 'Day') AS day,
-    el.genre AS Genre,
-    CASE
-        WHEN (
-            SELECT COUNT(*)
-            FROM ensemble_lesson_student els
-            WHERE el.id = els.ensemble_lesson_id
-        ) BETWEEN 1 AND 2 THEN '1 or 2 seats'
-        WHEN (
-            SELECT COUNT(*)
-            FROM ensemble_lesson_student els
-            WHERE el.id = els.ensemble_lesson_id
-        ) > 2 THEN 'Many seats'
-        ELSE 'No seats'
-    END AS "No of Free Seats"
-FROM 
-    ensemble_lesson el 
-LEFT JOIN time_slot ts ON ts.id = el.time_slot_id
-GROUP BY 
-    TO_CHAR(ts.start_time, 'Day'), el.genre, el.id
-ORDER BY 
-    TO_CHAR(ts.start_time, 'Day') DESC;
+select 
+to_char(ts.start_time, 'Day') as "day",
+RemainingTable.genre as Genre,
+case
+	when(RemainingTable.numberofstudents = 0) then 'No Seats'
+	when(RemainingTable.numberofstudents = 1 or RemainingTable.numberofstudents = 2) then '1 or 2 Seats'
+	else 'Many Seats'
+end as "Remaining seats"
+
+
+from
+(SELECT 
+	l.time_slot_id,
+    l.id, 
+    l.genre,
+    (l.max_students - COUNT(els.student_id)) AS NumberOfStudents
+FROM ensemble_lesson AS l
+JOIN ensemble_lesson_student AS els ON l.id = els.ensemble_lesson_id
+GROUP BY l.id) as RemainingTable
+
+
+left join time_slot ts on ts.id = RemainingTable.time_slot_id
+WHERE ts.start_time BETWEEN NOW() AND NOW() + INTERVAL '1 week'
+group by to_char(ts.start_time, 'Day'), RemainingTable.genre, RemainingTable.numberofstudents
+order by to_char(ts.start_time, 'Day') desc;
+
+
 
 
 
