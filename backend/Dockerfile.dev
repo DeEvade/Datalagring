@@ -1,0 +1,7 @@
+FROM node:16.1.0
+RUN mkdir -p /var/task
+WORKDIR /var/task
+COPY . .
+RUN npm install
+EXPOSE 8080
+CMD ["npm", "run", "dev"]
