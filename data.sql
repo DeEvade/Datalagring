@@ -294,3 +294,82 @@ values
   ('00aec2fb-c652-42af-8ed1-272b6697afc3', '58d6fbee-722b-4a83-9f86-6e7b595bb7f8'), -- Dawn Huber and Lana Bonner
   ('58d6fbee-722b-4a83-9f86-6e7b595bb7f8', '00aec2fb-c652-42af-8ed1-272b6697afc3'); 
 
+insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
+values
+(
+  (
+    select 
+    il.id
+    where il.time_slot < NOW()
+
+  ) as "individual",
+  null as "genre",
+  individual_lesson.instrument_type_name as "instrument",
+  (
+    select 
+    p."cost"
+    from
+    price p
+    join individual_lesson il on il.price_id = p.id;
+  ) as "lesson price",
+  (
+    select
+    CONCAT(s.first_name, ' ', s.last_name)
+    from 
+    student s
+    join 
+    individual_lesson_student ils on ils.student_id = s.id
+    join 
+    individual_lesson il on il.id = ils.individual_lesson_id;
+  ) as "student name",
+  (
+    select
+    s.email
+    from 
+    student s
+    join 
+    individual_lesson_student ils on ils.student_id = s.id
+    join 
+    individual_lesson il on il.id = ils.individual_lesson_id
+  ) as "student email"
+);
+
+insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
+values
+(
+  "lesson_type" as "group'",
+  null as "genre",
+  individual_lesson.instrument_type_name as "instrument",
+  (
+    select 
+    p."cost"
+    from
+    price p
+    join individual_lesson il on il.price_id = p.id;
+  ) as "lesson price",
+  (
+    select
+    CONCAT(s.first_name, ' ', s.last_name)
+    from 
+    student s
+    join 
+    individual_lesson_student ils on ils.student_id = s.id
+    join 
+    individual_lesson il on il.id = ils.individual_lesson_id;
+  ) as "student name",
+  (
+    select
+    s.email
+    from 
+    student s
+    join 
+    individual_lesson_student ils on ils.student_id = s.id
+    join 
+    individual_lesson il on il.id = ils.individual_lesson_id;
+  ) as "student email"
+);
+
+group 
+
+ind_his
+group_his
