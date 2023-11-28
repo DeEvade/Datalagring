@@ -1,6 +1,26 @@
 version: "3"
 
 services:
+
+  server:
+    tty: true
+    container_name: datalagring_server
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: dev
+      DB_HOST: db
+      DB_NAME: datalagring
+      DB_USERNAME: postgres
+      DB_PORT: 5432
+      DB_PASSWORD: password
+      SERVER_PORT: 8080
+    ports:
+      - "8080:8080"
   db:
     image: postgres
     environment:
@@ -14,3 +34,6 @@ services:
       retries: 5
     ports:
       - "5432:5432"
+    volumes:
+      - ./migrate-up.sql:/docker-entrypoint-initdb.d/init.sql
+
