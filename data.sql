@@ -1,6 +1,6 @@
 insert into contact_person("id", "first_name", "last_name", "social_security", "address", "email", "phone")
 values
-  ('48b4119d-5ba3-499d-b63c-8d91b4ae2afd','123Mercedes123','Hardin',196793749642,'P.O. Box 344, 5786 Arcu St.','id@yahoo.ca','1-278-535-7423'),
+  ('48b4119d-5ba3-499d-b63c-8d91b4ae2afd','Mercedes','Hardin',196793749642,'P.O. Box 344, 5786 Arcu St.','id@yahoo.ca','1-278-535-7423'),
   ('2ee63014-a8b9-448f-9ba5-0e1f457f5bd1','Debra','Wilkinson',197103692399,'P.O. Box 540, 550 Cubilia Ave','non@yahoo.couk','1-627-476-5687'),
   ('ff30d924-09b2-4574-8b02-10d954cdc6a9','Linda','Travis',197454992907,'Ap #569-915 Enim Rd.','dui.quis@google.com','1-588-688-6858'),
   ('ea80bc63-6f86-49fd-81b6-0d65de366c87','Shelly','Barr',198242475846,'2684 Laoreet St.','arcu.eu@hotmail.net','1-900-684-6894'),
@@ -294,87 +294,82 @@ values
   ('00aec2fb-c652-42af-8ed1-272b6697afc3', '58d6fbee-722b-4a83-9f86-6e7b595bb7f8'), -- Dawn Huber and Lana Bonner
   ('58d6fbee-722b-4a83-9f86-6e7b595bb7f8', '00aec2fb-c652-42af-8ed1-272b6697afc3'); 
 
-insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
-values
-(
-  (
-    select 
-    il.instrument_type_name
-    from 
-    individual_lesson il 
-    join 
-    time_slot ts on il.time_slot_id = ts.id
-    where 
-     < NOW();
+-- insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
+-- values
+-- (
+--   (
+--     select 
+--     il.instrument_type_name
+--     from 
+--     individual_lesson il 
+--     join 
+--     time_slot ts on il.time_slot_id = ts.id
+--     where 
+--     il.time_slot < NOW();
 
-  ) as "individual",
-  null as "genre",
-  individual_lesson.instrument_type_name as "instrument",
-  (
-    select 
-    p."cost"
-    from
-    price p
-    join individual_lesson il on il.price_id = p.id;
-  ) as "lesson price",
-  (
-    select
-    CONCAT(s.first_name, ' ', s.last_name)
-    from 
-    student s
-    join 
-    individual_lesson_student ils on ils.student_id = s.id
-    join 
-    individual_lesson il on il.id = ils.individual_lesson_id;
-  ) as "student name",
-  (
-    select
-    s.email
-    from 
-    student s
-    join 
-    individual_lesson_student ils on ils.student_id = s.id
-    join 
-    individual_lesson il on il.id = ils.individual_lesson_id
-  ) as "student email"
-);
+--   ) as "individual",
+--   null as "genre",
+--   individual_lesson.instrument_type_name as "instrument",
+--   (
+--     select 
+--     p."cost"
+--     from
+--     price p
+--     join individual_lesson il on il.price_id = p.id;
+--   ) as "lesson price",
+--   (
+--     select
+--     CONCAT(s.first_name, ' ', s.last_name)
+--     from 
+--     student s
+--     join 
+--     individual_lesson_student ils on ils.student_id = s.id
+--     join 
+--     individual_lesson il on il.id = ils.individual_lesson_id;
+--   ) as "student name",
+--   (
+--     select
+--     s.email
+--     from 
+--     student s
+--     join 
+--     individual_lesson_student ils on ils.student_id = s.id
+--     join 
+--     individual_lesson il on il.id = ils.individual_lesson_id
+--   ) as "student email"
+-- );
 
-insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
-values
-(
-  "lesson_type" as "group'",
-  null as "genre",
-  individual_lesson.instrument_type_name as "instrument",
-  (
-    select 
-    p."cost"
-    from
-    price p
-    join individual_lesson il on il.price_id = p.id;
-  ) as "lesson price",
-  (
-    select
-    CONCAT(s.first_name, ' ', s.last_name)
-    from 
-    student s
-    join 
-    individual_lesson_student ils on ils.student_id = s.id
-    join 
-    individual_lesson il on il.id = ils.individual_lesson_id;
-  ) as "student name",
-  (
-    select
-    s.email
-    from 
-    student s
-    join 
-    individual_lesson_student ils on ils.student_id = s.id
-    join 
-    individual_lesson il on il.id = ils.individual_lesson_id;
-  ) as "student email"
-);
-
-group 
-
-ind_his
-group_his
+-- insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
+-- values
+-- (
+--   "lesson_type" as "group'",
+--   null as "genre",
+--   individual_lesson.instrument_type_name as "instrument",
+--   (
+--     select 
+--     p."cost"
+--     from
+--     price p
+--     join individual_lesson il on il.price_id = p.id;
+--   ) as "lesson price",
+--   (
+--     select
+--     CONCAT(s.first_name, ' ', s.last_name)
+--     from 
+--     student s
+--     join 
+--     individual_lesson_student ils on ils.student_id = s.id
+--     join 
+--     individual_lesson il on il.id = ils.individual_lesson_id;
+--   ) as "student name",
+--   (
+--     select
+--     s.email
+--     from 
+--     student s
+--     join 
+--     individual_lesson_student ils on ils.student_id = s.id
+--     join 
+--     individual_lesson il on il.id = ils.individual_lesson_id;
+--   ) as "student email"
+-- );
