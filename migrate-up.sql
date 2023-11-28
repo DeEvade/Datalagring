@@ -29,7 +29,7 @@ CREATE TABLE "student"(
   "social_security" VARCHAR(256) UNIQUE NOT NULL,
   "address" VARCHAR(256) NOT NULL,
   "email" VARCHAR(256) UNIQUE NOT NULL,
-  "phone" VARCHAR(256) UNIQUE NOT NULL
+  "phone" VARCHAR(256) UNIQUE NOT NULL, -- Here a comma sign was forgotten and added later
   "contact_person_id" uuid,
   CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "contact_person"(id) ON DELETE CASCADE
 );
@@ -63,7 +63,7 @@ CREATE TABLE "instructor"(
   "social_security" VARCHAR(256) UNIQUE NOT NULL,
   "address" VARCHAR(256) NOT NULL,
   "email" VARCHAR(256) UNIQUE NOT NULL,
-  "phone" VARCHAR(256) UNIQUE NOT NULL
+  "phone" VARCHAR(256) UNIQUE NOT NULL, -- Here a comma sign was forgotten and added later
   "contact_person_id" uuid,
   CONSTRAINT fk_contact_person_id FOREIGN KEY (contact_person_id) REFERENCES "contact_person"(id) ON DELETE CASCADE
 );
