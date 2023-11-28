@@ -299,8 +299,13 @@ values
 (
   (
     select 
-    il.id
-    where il.time_slot < NOW()
+    il.instrument_type_name
+    from 
+    individual_lesson il 
+    join 
+    time_slot ts on il.time_slot_id = ts.id
+    where 
+     < NOW();
 
   ) as "individual",
   null as "genre",
