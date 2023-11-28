@@ -281,7 +281,16 @@ values
 insert into sibling("student_1", "student_2")
 values
   ('d9f8ccfc-339a-4054-b740-cd081886bafe', 'a35b8f38-0909-4af5-b4af-32cf58ae9129'), -- Roth Stokes and Thor Hardy are siblings
+  ('a35b8f38-0909-4af5-b4af-32cf58ae9129', 'd9f8ccfc-339a-4054-b740-cd081886bafe'),
+  
   ('00aec2fb-c652-42af-8ed1-272b6697afc3', 'df411466-8598-4c13-9959-14317d50d2d3'), -- Dawn Huber and Malachi Martin
+  ('df411466-8598-4c13-9959-14317d50d2d3', '00aec2fb-c652-42af-8ed1-272b6697afc3'),
+
+  
   ('df411466-8598-4c13-9959-14317d50d2d3', '58d6fbee-722b-4a83-9f86-6e7b595bb7f8'), -- Malachi Martin and Lana Bonner
-  ('00aec2fb-c652-42af-8ed1-272b6697afc3', '58d6fbee-722b-4a83-9f86-6e7b595bb7f8'); -- Dawn Huber and Lana Bonner
+  ('58d6fbee-722b-4a83-9f86-6e7b595bb7f8', 'df411466-8598-4c13-9959-14317d50d2d3'),
+
+  
+  ('00aec2fb-c652-42af-8ed1-272b6697afc3', '58d6fbee-722b-4a83-9f86-6e7b595bb7f8'), -- Dawn Huber and Lana Bonner
+  ('58d6fbee-722b-4a83-9f86-6e7b595bb7f8', '00aec2fb-c652-42af-8ed1-272b6697afc3'); 
 
