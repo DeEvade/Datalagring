@@ -294,82 +294,46 @@ values
   ('00aec2fb-c652-42af-8ed1-272b6697afc3', '58d6fbee-722b-4a83-9f86-6e7b595bb7f8'), -- Dawn Huber and Lana Bonner
   ('58d6fbee-722b-4a83-9f86-6e7b595bb7f8', '00aec2fb-c652-42af-8ed1-272b6697afc3'); 
 
--- insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
--- values
--- (
---   (
---     select 
---     il.instrument_type_name
---     from 
---     individual_lesson il 
---     join 
---     time_slot ts on il.time_slot_id = ts.id
---     where 
---     il.time_slot < NOW();
 
---   ) as "individual",
---   null as "genre",
---   individual_lesson.instrument_type_name as "instrument",
---   (
---     select 
---     p."cost"
---     from
---     price p
---     join individual_lesson il on il.price_id = p.id;
---   ) as "lesson price",
---   (
---     select
---     CONCAT(s.first_name, ' ', s.last_name)
---     from 
---     student s
---     join 
---     individual_lesson_student ils on ils.student_id = s.id
---     join 
---     individual_lesson il on il.id = ils.individual_lesson_id;
---   ) as "student name",
---   (
---     select
---     s.email
---     from 
---     student s
---     join 
---     individual_lesson_student ils on ils.student_id = s.id
---     join 
---     individual_lesson il on il.id = ils.individual_lesson_id
---   ) as "student email"
--- );
 
--- insert into historical_data("lesson_type","genre","instrument","lesson_price","student_name", "student_email")
--- values
--- (
---   "lesson_type" as "group'",
---   null as "genre",
---   individual_lesson.instrument_type_name as "instrument",
---   (
---     select 
---     p."cost"
---     from
---     price p
---     join individual_lesson il on il.price_id = p.id;
---   ) as "lesson price",
---   (
---     select
---     CONCAT(s.first_name, ' ', s.last_name)
---     from 
---     student s
---     join 
---     individual_lesson_student ils on ils.student_id = s.id
---     join 
---     individual_lesson il on il.id = ils.individual_lesson_id;
---   ) as "student name",
---   (
---     select
---     s.email
---     from 
---     student s
---     join 
---     individual_lesson_student ils on ils.student_id = s.id
---     join 
---     individual_lesson il on il.id = ils.individual_lesson_id;
---   ) as "student email"
--- );
+INSERT INTO historical_lesson (lesson_type, genre, instrument, price, student_name, student_email)
+SELECT 
+    'Individual Lesson' AS lesson_type,
+    NULL AS genre,
+    it.name AS instrument,
+    il.price AS price,
+    CONCAT(s.first_name, ' ', s.last_name) AS student_name,
+    s.email AS student_email
+FROM individual_lesson_student ils
+JOIN individual_lesson il ON ils.individual_lesson_id = il.id
+JOIN instrument_type it ON il.instrument_type_name = it.name
+JOIN student s ON ils.student_id = s.id
+
+UNION
+
+SELECT 
+    'Group Lesson' AS lesson_type,
+    NULL AS genre,
+    it.name AS instrument,
+    gl.price AS price,
+    CONCAT(s.first_name, ' ', s.last_name) AS student_name,
+    s.email AS student_email
+FROM group_lesson_student gls
+JOIN group_lesson gl ON gls.group_lesson_id = gl.id
+JOIN instrument_type it ON gl.instrument_type_name = it.name
+JOIN student s ON gls.student_id = s.id
+
+UNION
+
+SELECT 
+    'Ensemble Lesson' AS lesson_type,
+    el.genre AS genre,
+    it.name AS instrument,
+    el.price AS price,
+    CONCAT(s.first_name, ' ', s.last_name) AS student_name,
+    s.email AS student_email
+FROM ensemble_lesson_student els
+JOIN ensemble_lesson el ON els.ensemble_lesson_id = el.id
+JOIN ensemble_lesson_instrument eli ON el.id = eli.ensemble_lesson_id
+JOIN instrument_type it ON eli.instrument_type_name = it.name
+JOIN student s ON els.student_id = s.id;
