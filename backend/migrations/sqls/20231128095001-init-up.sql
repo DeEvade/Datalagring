@@ -1,6 +1,6 @@
 insert into contact_person("id", "first_name", "last_name", "social_security", "address", "email", "phone")
 values
-  ('48b4119d-5ba3-499d-b63c-8d91b4ae2afd','123Mercedes123','Hardin',196793749642,'P.O. Box 344, 5786 Arcu St.','id@yahoo.ca','1-278-535-7423'),
+  ('48b4119d-5ba3-499d-b63c-8d91b4ae2afd','Mercedes','Hardin',196793749642,'P.O. Box 344, 5786 Arcu St.','id@yahoo.ca','1-278-535-7423'),
   ('2ee63014-a8b9-448f-9ba5-0e1f457f5bd1','Debra','Wilkinson',197103692399,'P.O. Box 540, 550 Cubilia Ave','non@yahoo.couk','1-627-476-5687'),
   ('ff30d924-09b2-4574-8b02-10d954cdc6a9','Linda','Travis',197454992907,'Ap #569-915 Enim Rd.','dui.quis@google.com','1-588-688-6858'),
   ('ea80bc63-6f86-49fd-81b6-0d65de366c87','Shelly','Barr',198242475846,'2684 Laoreet St.','arcu.eu@hotmail.net','1-900-684-6894'),
