@@ -42,7 +42,10 @@ CREATE TABLE "sibling"(
   CONSTRAINT fk_student_2 FOREIGN KEY (student_2) REFERENCES "student"(id) ON DELETE CASCADE
 );
 
-CREATE TABLE "instrument_type"("name" VARCHAR(256) PRIMARY KEY NOT NULL);
+CREATE TABLE "instrument_type"(
+  "name" VARCHAR(256) PRIMARY KEY NOT NULL,
+  "max_rent_month" INT NOT NULL
+  );
 
 CREATE TABLE "instrument"(
   "id" uuid primary key default gen_random_uuid(),
