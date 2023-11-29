@@ -311,7 +311,7 @@ JOIN student s ON ils.student_id = s.id;
 INSERT INTO historical_lesson (lesson_type, genre, instrument, price, student_name, student_email)
 SELECT 
     'Group Lesson',
-    NULL,  -- Replace with the actual genre value if applicable
+    NULL as genre, 
     it.name AS instrument,
     gls.price AS price,
     CONCAT(s.first_name, ' ', s.last_name) AS student_name,
