@@ -54,31 +54,36 @@ SELECT
 FROM
     instructor i
     JOIN (
-        SELECT
-            instructor_id
-        FROM
-            individual_lesson
-        UNION
-        ALL
-        SELECT
-            instructor_id
-        FROM
-            group_lesson
-        UNION
-        ALL
-        SELECT
-            instructor_id
-        FROM
-            ensemble_lesson
-    ) AS all_lessons ON i.id = all_lessons.instructor_id -- sätter ihop alla lektioner till en lektion på instructorns id, vi behlver inte veta vilken lekton som arbetades på
+        SELECT il.instructor_id
+        FROM individual_lesson il
+        JOIN time_slot ts ON il.time_slot_id = ts.id
+        WHERE EXTRACT(MONTH FROM NOW()) = EXTRACT(MONTH FROM ts.start_time)
+        
+        UNION ALL
+        
+        SELECT gl.instructor_id
+        FROM group_lesson gl
+        JOIN time_slot ts ON gl.time_slot_id = ts.id
+        WHERE EXTRACT(MONTH FROM NOW()) = EXTRACT(MONTH FROM ts.start_time)
+
+        
+        UNION ALL
+        
+        SELECT el.instructor_id
+        FROM ensemble_lesson el
+        JOIN time_slot ts ON el.time_slot_id = ts.id
+        WHERE EXTRACT(MONTH FROM NOW()) = EXTRACT(MONTH FROM ts.start_time)
+
+    ) AS all_lessons ON i.id = all_lessons.instructor_id
 GROUP BY
     i.id,
     i.first_name,
     i.last_name
 HAVING
-    COUNT(*) > 0
+    COUNT(*) > 0 -- Adjust the specific number of lessons as needed
 ORDER BY
-    count(*) DESC;
+    COUNT(*) DESC;
+  
 
 -- QUERY 4
 select
