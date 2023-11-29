@@ -301,7 +301,7 @@ SELECT
     'Individual Lesson' AS lesson_type,
     NULL AS genre,
     it.name AS instrument,
-    il.price AS price,
+    ils.price AS price,
     CONCAT(s.first_name, ' ', s.last_name) AS student_name,
     s.email AS student_email
 FROM individual_lesson_student ils
@@ -315,7 +315,7 @@ SELECT
     'Group Lesson' AS lesson_type,
     NULL AS genre,
     it.name AS instrument,
-    gl.price AS price,
+    gls.price AS price,
     CONCAT(s.first_name, ' ', s.last_name) AS student_name,
     s.email AS student_email
 FROM group_lesson_student gls
@@ -329,7 +329,7 @@ SELECT
     'Ensemble Lesson' AS lesson_type,
     el.genre AS genre,
     it.name AS instrument,
-    el.price AS price,
+    els.price AS price,
     CONCAT(s.first_name, ' ', s.last_name) AS student_name,
     s.email AS student_email
 FROM ensemble_lesson_student els
