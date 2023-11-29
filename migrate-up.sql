@@ -167,15 +167,17 @@ CREATE TABLE "ensemble_lesson_instrument"(
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE
 );
 
--- CREATE TABLE "historical_data"(
---   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
---   "lesson_type" VARCHAR(256) NOT NULL,
---   "genre" VARCHAR(256),
---   "instrument" VARCHAR(256),
---   "lesson_price" INT NOT NULL,
---   "student_name" VARCHAR(256) NOT NULL,
---   "student_email" VARCHAR(256) NOT NULL
--- );
+CREATE TABLE "historical_lesson"(
+  "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  "lesson_type" VARCHAR(256),
+  "genre" VARCHAR(256),
+  "instrument" VARCHAR(256),
+  "price" int,
+  "student_name" VARCHAR(256),
+  "student_email" VARCHAR(256)
+);
+
+
 
 CREATE OR REPLACE FUNCTION check_instrument_rent_limit()
 RETURNS TRIGGER AS $$
@@ -192,4 +194,3 @@ CREATE TRIGGER check_max_instruments
     FOR EACH ROW
     EXECUTE FUNCTION check_instrument_rent_limit();
    
-

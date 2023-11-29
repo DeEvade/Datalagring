@@ -11,7 +11,6 @@ const port = 8080;
 
 app.get("/", async(req, res) => {
   const response = await db.query("select * from student");
-  console.log(response);
   res.send("hello world" + JSON.stringify(response["rows"]));
 });
 
