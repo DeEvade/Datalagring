@@ -77,7 +77,7 @@ GROUP BY
     i.first_name,
     i.last_name
 HAVING
-    COUNT(*) > 0 -- Adjust the specific number of lessons as needed
+    COUNT(*) > 0 
 ORDER BY
     COUNT(*) DESC;
   

@@ -149,13 +149,13 @@ values
 
 
  
-insert into instrument_type(name)
+insert into instrument_type("name", "max_rent_month")
 values
-	('Piano'),
-	('Guitar'),
-	('Violin'),
-	('Drums'),
-  ('Trumpet');
+	('Piano', 12),
+	('Guitar', 12),
+	('Violin', 12),
+	('Drums', 12),
+  ('Trumpet', 12);
  
 INSERT INTO group_lesson("id","level", "min_students", "max_students", "price_id", "instructor_id", "instrument_type_name", "time_slot_id", "instructor_pay")
 VALUES 
