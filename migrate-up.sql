@@ -54,6 +54,14 @@ CREATE TABLE "instrument"(
   CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE,
   "student_id" uuid,
   CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES "student"(id) ON DELETE CASCADE,
+);
+
+CREATE TABLE "instrument_contract"(
+  "id" uuid primary key default gen_random_uuid(),
+  "student_id" uuid,
+  CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES "student"(id) ON DELETE CASCADE,
+  "instrument_id" uuid,
+  CONSTRAINT fk_instrument_id FOREIGN KEY (instrument_id) REFERENCES "instrument"(id) ON DELETE CASCADE,
   "time_slot_id" uuid,
   CONSTRAINT fk_time_slot_id FOREIGN KEY (time_slot_id) REFERENCES "time_slot"(id) ON DELETE CASCADE
 );

@@ -1,4 +1,4 @@
-const { Pool, PoolConfig } = require('pg');
+const { Pool } = require('pg');
 
 let sqlPool = undefined;
 
