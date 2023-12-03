@@ -241,17 +241,23 @@ values
 --     'accepted'
 -- );
 
-insert into instrument("id", "price", "instrument_type_name", "student_id", "time_slot_id")
+insert into instrument("id", "price", "instrument_type_name", "model")
 values
-  ('8bac6acc-e838-403f-a47a-f40eb28d92ab','300','Guitar','d9f8ccfc-339a-4054-b740-cd081886bafe','874f979b-7587-4fe5-aa5b-1678c7cb66e8'), 
+  ('8bac6acc-e838-403f-a47a-f40eb28d92ab','300','Guitar', 'Electric'), 
   -- All instruments are rented at the same time, the begining of the year
-  ('fb138269-dc8a-4564-8fe8-494b92644dfd','500','Violin','a35b8f38-0909-4af5-b4af-32cf58ae9129','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('9111f7e5-1b4b-4bbc-8bcc-95983a7bc9ae','200','Piano','7f3697bf-f797-4edf-b6ae-e9173e971649','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('5efe07a2-3ae2-4eb4-97ca-da0be1fae9bd','600','Guitar','58d6fbee-722b-4a83-9f86-6e7b595bb7f8','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('d14314e0-1ea3-4de5-b0f2-924fb34f6d1d','1000','Drums','ae8c641f-3657-476f-816e-98b286f02e79','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('128a8cff-9141-4bdd-9ceb-8457ba447704','1500','Violin','6ef1c19e-97fd-4ec5-ae3b-7b1a30d3cb0a','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('3397761b-c1fc-4c18-9a1f-c754ac0df193','900','Trumpet','a7501bd2-4c6c-4981-95e8-ecc41e5d0726','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
-  ('59582c91-db72-44d9-b37c-d04b5defde0b','1600','Trumpet',NULL,NULL); -- Det finns ett instrument som inte är hyrd av någon
+  ('fb138269-dc8a-4564-8fe8-494b92644dfd','500','Violin', 'Electric'),
+  ('9111f7e5-1b4b-4bbc-8bcc-95983a7bc9ae','200','Piano', 'Keyboard'),
+  ('3397761b-c1fc-4c18-9a1f-c754ac0df193','900','Trumpet', 'Flugel'),
+  ('5efe07a2-3ae2-4eb4-97ca-da0be1fae9bd','600','Guitar', 'Acoustic'),
+  ('d14314e0-1ea3-4de5-b0f2-924fb34f6d1d','1000','Drums', 'Digital'),
+  ('128a8cff-9141-4bdd-9ceb-8457ba447704','1500','Violin', 'Acoustic'),
+  ('59582c91-db72-44d9-b37c-d04b5defde0b','1600','Trumpet', 'Piccolo');
+
+insert into instrument_contract("student_id", "instrument_id", "time_slot_id")
+values
+  ('d9f8ccfc-339a-4054-b740-cd081886bafe','8bac6acc-e838-403f-a47a-f40eb28d92ab','874f979b-7587-4fe5-aa5b-1678c7cb66e8'), 
+  ('a35b8f38-0909-4af5-b4af-32cf58ae9129','fb138269-dc8a-4564-8fe8-494b92644dfd','874f979b-7587-4fe5-aa5b-1678c7cb66e8'),
+  ('7f3697bf-f797-4edf-b6ae-e9173e971649','3397761b-c1fc-4c18-9a1f-c754ac0df193','874f979b-7587-4fe5-aa5b-1678c7cb66e8');
 
 /*
 insert into instrument("price", "instrument_type_name", "student_id", "time_slot_id")

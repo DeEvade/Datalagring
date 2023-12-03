@@ -50,14 +50,14 @@ CREATE TABLE "instrument_type"(
 CREATE TABLE "instrument"(
   "id" uuid primary key default gen_random_uuid(),
   "price" INT NOT NULL,
+  "model" VARCHAR(256) NOT NULL,
   "instrument_type_name" VARCHAR(256) NOT NULL,
-  CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE,
-  "student_id" uuid,
-  CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES "student"(id) ON DELETE CASCADE,
+  CONSTRAINT fk_instrument_type_name FOREIGN KEY (instrument_type_name) REFERENCES "instrument_type"("name") ON DELETE CASCADE
 );
 
 CREATE TABLE "instrument_contract"(
   "id" uuid primary key default gen_random_uuid(),
+  "isActive" boolean DEFAULT true,
   "student_id" uuid,
   CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES "student"(id) ON DELETE CASCADE,
   "instrument_id" uuid,
