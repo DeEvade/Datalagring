@@ -1,8 +1,8 @@
  const constructListInstrumentsQuery = () => {
   return `
   select * from instrument
-  join instrument_contract ic on ic.instrument_id = instrument.id
-  where ic."isActive" = true
+  full join instrument_contract ic on ic.instrument_id = instrument.id
+  where ic."isActive"  = false or ic."isActive" is null 
   ;
   `
 }
