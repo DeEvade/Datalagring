@@ -2,8 +2,9 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "npx db-migrate up all && node app.js",
     "dev": "node app.js",
     "migrate:latest": "db-migrate up all",
     "migrate:create": "NODE_ENV=dev db-migrate create $NAME --sql-file",

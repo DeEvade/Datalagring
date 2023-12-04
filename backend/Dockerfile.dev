@@ -1,7 +1,6 @@
-FROM node:16.1.0
-RUN mkdir -p /var/task
+FROM node:20.10.0
 WORKDIR /var/task
-COPY . .
+COPY . /var/task
 RUN npm install
 EXPOSE 8080
-CMD ["/bin/sh","init.sh"]
+CMD ["npm", "start"]
