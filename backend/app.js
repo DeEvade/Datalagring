@@ -1,5 +1,7 @@
 const express = require("express");
 const { constructListInstrumentsQuery } =  require("./task_4");
+const { listInstruments } =  require("./templates");
+
 const dotenv = require("dotenv");
 
 const db = require("./pool").getSQLPool();
@@ -15,31 +17,7 @@ app.get("/", async (req, res) => {
 
 app.get("/listInstruments", async (req, res) => {
   const response = await db.query(constructListInstrumentsQuery());
-
-  const website = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello</title>
-</head>
-<body>
-<div>
-${response["rows"].map((instrument) => {
-  return `
-  <div>
-    <h1>${instrument.instrument_type_name + " " + instrument.model}</h1>
-    <p>${instrument.price}</p>
-  </div>
-  <br />`;
-
-}).join("")}
-</div>
-</body>
-</html>
-  
-`;
+  const website = listInstruments(response["rows"]);
 
   res.send(website);
 });
