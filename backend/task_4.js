@@ -6,5 +6,4 @@
   ;
   `
 }
-
 exports.constructListInstrumentsQuery = constructListInstrumentsQuery;

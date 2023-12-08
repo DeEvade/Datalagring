@@ -6,7 +6,6 @@ let sqlPool = undefined;
   if (!sqlPool) {
     sqlPool = new Pool({ ...getConnectionConfig() });
   }
-
   return sqlPool;
 }
 
@@ -25,7 +24,6 @@ function getConnectionConfig() {
       throw new Error(`Missing database config: ${key}`);
     }
   }
-
   return config;
 }
 
