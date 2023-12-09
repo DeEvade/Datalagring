@@ -57,7 +57,7 @@ CREATE TABLE "instrument"(
 
 CREATE TABLE "instrument_contract"(
   "id" uuid primary key default gen_random_uuid(),
-  "isActive" boolean DEFAULT true,
+  "is_active" boolean DEFAULT true NOT NULl,
   "student_id" uuid,
   CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES "student"(id) ON DELETE CASCADE,
   "instrument_id" uuid,
@@ -193,7 +193,7 @@ CREATE TABLE "historical_lesson"(
 CREATE OR REPLACE FUNCTION check_instrument_rent_limit()
 RETURNS TRIGGER AS $$
 BEGIN
-  IF (SELECT COUNT(*) FROM instrument WHERE student_id = NEW.student_id) >= 2 THEN
+  IF (SELECT COUNT(*) FROM instrument_contract WHERE student_id = NEW.student_id AND is_active = TRUE) >= 2 THEN
     RAISE EXCEPTION 'Student cannot have more than 2 instruments';
   END IF;
   RETURN NEW;
@@ -201,7 +201,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER check_max_instruments
-    BEFORE UPDATE ON instrument
+    BEFORE INSERT OR UPDATE ON instrument_contract
     FOR EACH ROW
     EXECUTE FUNCTION check_instrument_rent_limit();
    
