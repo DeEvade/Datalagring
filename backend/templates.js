@@ -15,6 +15,7 @@ ${instruments
   <div>
     <h1>${instrument.instrument_type_name + " " + instrument.model}</h1>
     <p>${instrument.price}</p>
+    <p>${instrument.id}</p>
   </div>
   <br />`;
   })

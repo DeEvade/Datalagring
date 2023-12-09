@@ -1,5 +1,4 @@
 const express = require("express");
-const { constructListInstrumentsQuery } = require("./task_4");
 const { listInstruments } = require("./templates");
 
 const dotenv = require("dotenv");
@@ -14,25 +13,26 @@ dotenv.config();
 const port = 8080;
 
 app.get("/", async (req, res) => {
-  const response = await integration.query("select * from student");
+  const response = await integration.test();
   res.send("hello world" + JSON.stringify(response));
 });
 
 app.get("/listInstruments", async (req, res) => {
-  const queryString = constructListInstrumentsQuery();
-  const response = await integration.query(queryString);
+  //const queryString = constructListInstrumentsQuery();
+  const response = await integration.listInstrument();
   const website = listInstruments(response);
 
   res.send(website);
 });
 
 app.get("/rent/:userId", async (req, res) => {
-  /*
-  const queryString = constructListInstrumentsQuery();
-  const response = await integration.query(queryString);
-  const website = listInstruments(response);*/
 
-  res.send(req.params.userId);
+  //const timeSlotId = req.query.timeSlotId;
+    const userId = req.params.userId;
+    const instrumentId = req.query.instrumentId; 
+    console.log('Received request:', { userId, instrumentId });
+    const result = await integration.createContract(userId, instrumentId);
+    res.send(result);
 });
 
 app.listen(port, () => {

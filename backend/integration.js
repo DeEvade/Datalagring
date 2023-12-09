@@ -1,3 +1,6 @@
+const { constructListInstrumentsQuery } = require("./task_4");
+const { createContractQuery} = require("./task_4");
+
 class Integration {
   pool;
 
@@ -15,7 +18,52 @@ class Integration {
     }
   }
 
-  async wrapInTransaction() {
+  async listInstrument(){ //ReadInstruments
+    try {
+      const result = await this.pool.query(constructListInstrumentsQuery());
+      return result.rows;
+    } catch (err) {
+      console.error("Error executing query:", err.message);
+      throw err;
+    }
+  }
+
+  async test(){
+    try {
+      const result = await this.pool.query("select * from student");
+      return result.rows;
+    } catch (err) {
+      console.error("Error executing query:", err.message);
+      throw err;
+    }
+  }
+/*
+    const client = await this.pool.connect();
+    try {
+      await client.query('BEGIN');
+
+      const result = await client.query(createContractQuery(), [studentId, instrumentId]);
+
+      await client.query('COMMIT');
+      return result.rows[0];
+    } catch (err) {
+      await client.query('ROLLBACK');
+      console.error('Error creating contract:', err.message);
+      throw err;
+    } finally {
+      client.release();
+    }
+
+
+*/
+  async createContract(studentId, instrumentId) {
+    return this.wrapInTransaction(async (client) => {
+      const result = await client.query(createContractQuery(), [studentId, instrumentId]);
+      return result.rows[0];
+    });
+  }
+
+  async wrapInTransaction(callback) {
     const client = await this.pool.connect();
     try {
       await client.query("BEGIN");
