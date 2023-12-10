@@ -31,8 +31,12 @@ app.get("/rent/:userId", async (req, res) => {
     const userId = req.params.userId;
     const instrumentId = req.query.instrumentId; 
     console.log('Received request:', { userId, instrumentId });
-    const result = await integration.createContract(userId, instrumentId);
-    res.send(result);
+    try {
+      const result = await integration.createContract(userId, instrumentId);
+      res.send(result);
+    } catch (error) {
+      res.send(error.message);
+    }
 });
 
 app.listen(port, () => {

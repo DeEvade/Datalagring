@@ -66,6 +66,9 @@ CREATE TABLE "instrument_contract"(
   CONSTRAINT fk_time_slot_id FOREIGN KEY (time_slot_id) REFERENCES "time_slot"(id) ON DELETE CASCADE
 );
 
+CREATE UNIQUE INDEX unique_active_instrument_contract
+ON "instrument_contract" (instrument_id)
+WHERE is_active = true;
 
 CREATE TABLE "instructor"(
   "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -204,4 +207,6 @@ CREATE TRIGGER check_max_instruments
     BEFORE INSERT OR UPDATE ON instrument_contract
     FOR EACH ROW
     EXECUTE FUNCTION check_instrument_rent_limit();
+
+
    

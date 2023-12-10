@@ -1,5 +1,5 @@
 const { constructListInstrumentsQuery } = require("./task_4");
-const { createContractQuery} = require("./task_4");
+const { createContractQuery } = require("./task_4");
 
 class Integration {
   pool;
@@ -18,7 +18,8 @@ class Integration {
     }
   }
 
-  async listInstrument(){ //ReadInstruments
+  async listInstrument() {
+    //ReadInstruments
     try {
       const result = await this.pool.query(constructListInstrumentsQuery());
       return result.rows;
@@ -28,7 +29,7 @@ class Integration {
     }
   }
 
-  async test(){
+  async test() {
     try {
       const result = await this.pool.query("select * from student");
       return result.rows;
@@ -37,7 +38,7 @@ class Integration {
       throw err;
     }
   }
-/*
+  /*
     const client = await this.pool.connect();
     try {
       await client.query('BEGIN');
@@ -58,8 +59,15 @@ class Integration {
 */
   async createContract(studentId, instrumentId) {
     return this.wrapInTransaction(async (client) => {
-      const result = await client.query(createContractQuery(), [studentId, instrumentId]);
-      return result.rows[0];
+      try {
+        const result = await client.query(createContractQuery(), [
+          studentId,
+          instrumentId,
+        ]);
+        return result.rows[0];
+      } catch (error) {
+        throw error;
+      }
     });
   }
 
@@ -80,5 +88,5 @@ class Integration {
       client.release();
     }
   }
-};
+}
 module.exports = Integration;
