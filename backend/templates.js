@@ -15,7 +15,7 @@ ${instruments
   <div>
     <h1>${instrument.instrument_type_name + " " + instrument.model}</h1>
     <p>${instrument.price}</p>
-    <p>${instrument.id}</p>
+    <p>${instrument["instr_id"]}</p>
   </div>
   <br />`;
   })
@@ -25,6 +25,5 @@ ${instruments
 </html>
 `;
 };
-
 
 exports.listInstruments = listInstruments;

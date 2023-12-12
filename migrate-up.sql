@@ -204,7 +204,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER check_max_instruments
-    BEFORE INSERT OR UPDATE ON instrument_contract
+    BEFORE INSERT ON instrument_contract
     FOR EACH ROW
     EXECUTE FUNCTION check_instrument_rent_limit();
 

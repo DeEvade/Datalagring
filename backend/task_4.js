@@ -1,9 +1,10 @@
 const constructListInstrumentsQuery = () => {
   return `
-  select * from instrument
-  full join instrument_contract ic on ic.instrument_id = instrument.id
-  where ic."is_active"  = false or ic."is_active" is null 
-  ;
+  select *, i.id as instr_id from instrument i
+    where i.id not in (
+      select ic.instrument_id from instrument_contract ic
+    where ic.is_active = true)
+    ;
   `
 }
 const createContractQuery = () =>{
@@ -12,5 +13,28 @@ const createContractQuery = () =>{
   VALUES ($1, $2);
   `;
 }
+
+const selectContractForUpdate = () =>{
+  return `
+  select * from instrument_contract where instrument_id = $1 for update;
+  `;
+}
+
+
+
+const updateContractQuery = () =>{
+  return `
+update instrument_contract 
+   set "is_active" = $2,
+   "student_id" = $3,
+   "instrument_id" = $4,
+   "time_slot_id" = $5
+where id = $1;
+  `;
+}
+exports.updateContractQuery = updateContractQuery;
+
+exports.selectContractForUpdate = selectContractForUpdate;
+
 exports.constructListInstrumentsQuery = constructListInstrumentsQuery;
 exports.createContractQuery = createContractQuery;

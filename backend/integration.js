@@ -1,5 +1,9 @@
-const { constructListInstrumentsQuery } = require("./task_4");
-const { createContractQuery } = require("./task_4");
+const {
+  createContractQuery,
+  selectContractForUpdate,
+  constructListInstrumentsQuery,
+  updateContractQuery,
+} = require("./task_4");
 
 class Integration {
   pool;
@@ -70,6 +74,29 @@ class Integration {
       }
     });
   }
+
+  async fetchContract(instrumentId, client) {
+    try {
+      const result = await client.query(selectContractForUpdate(), [
+        instrumentId,
+      ]);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updateContract(newContract, client) {
+    try {
+      const result = await client.query(updateContractQuery(), [
+        ...newContract,
+      ]);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  
 
   async wrapInTransaction(callback) {
     const client = await this.pool.connect();
