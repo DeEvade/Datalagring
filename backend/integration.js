@@ -33,7 +33,7 @@ class Integration {
     }
   }
 
-  async test() {
+async test() {
     try {
       const result = await this.pool.query("select * from student");
       return result.rows;
@@ -67,6 +67,7 @@ class Integration {
         const result = await client.query(createContractQuery(), [
           studentId,
           instrumentId,
+          "874f979b-7587-4fe5-aa5b-1678c7cb66e8"
         ]);
         return result.rows[0];
       } catch (error) {
@@ -75,7 +76,7 @@ class Integration {
     });
   }
 
-  async fetchContract(instrumentId, client) {
+  async getContract(instrumentId, client) {
     try {
       const result = await client.query(selectContractForUpdate(), [
         instrumentId,

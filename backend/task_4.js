@@ -9,8 +9,8 @@ const constructListInstrumentsQuery = () => {
 }
 const createContractQuery = () =>{
   return `
-  insert into instrument_contract("student_id","instrument_id")
-  VALUES ($1, $2);
+  insert into instrument_contract("student_id","instrument_id", "time_slot_id")
+  VALUES ($1, $2, $3);
   `;
 }
 
@@ -24,12 +24,12 @@ const selectContractForUpdate = () =>{
 
 const updateContractQuery = () =>{
   return `
-update instrument_contract 
-   set "is_active" = $2,
-   "student_id" = $3,
-   "instrument_id" = $4,
-   "time_slot_id" = $5
-where id = $1;
+  update instrument_contract 
+    set "is_active" = $2,
+    "student_id" = $3,
+    "instrument_id" = $4,
+    "time_slot_id" = $5
+  where id = $1;
   `;
 }
 exports.updateContractQuery = updateContractQuery;
