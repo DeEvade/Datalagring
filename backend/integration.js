@@ -12,18 +12,17 @@ class Integration {
     this.pool = pool;
   }
 
-  async query(queryString, values) {
-    try {
-      const result = await this.pool.query(queryString, values);
-      return result.rows;
-    } catch (err) {
-      console.error("Error executing query:", err.message);
-      throw err;
-    }
-  }
+  // async query(queryString, values) {
+  //   try {
+  //     const result = await this.pool.query(queryString, values);
+  //     return result.rows;
+  //   } catch (err) {
+  //     console.error("Error executing query:", err.message);
+  //     throw err;
+  //   }
+  // }
 
-  async listInstrument() {
-    //ReadInstruments
+  async readInstrument() {
     try {
       const result = await this.pool.query(constructListInstrumentsQuery());
       return result.rows;
@@ -33,34 +32,6 @@ class Integration {
     }
   }
 
-async test() {
-    try {
-      const result = await this.pool.query("select * from student");
-      return result.rows;
-    } catch (err) {
-      console.error("Error executing query:", err.message);
-      throw err;
-    }
-  }
-  /*
-    const client = await this.pool.connect();
-    try {
-      await client.query('BEGIN');
-
-      const result = await client.query(createContractQuery(), [studentId, instrumentId]);
-
-      await client.query('COMMIT');
-      return result.rows[0];
-    } catch (err) {
-      await client.query('ROLLBACK');
-      console.error('Error creating contract:', err.message);
-      throw err;
-    } finally {
-      client.release();
-    }
-
-
-*/
   async createContract(studentId, instrumentId) {
     return this.wrapInTransaction(async (client) => {
       try {
@@ -76,7 +47,7 @@ async test() {
     });
   }
 
-  async getContract(instrumentId, client) {
+  async readContract(instrumentId, client) {
     try {
       const result = await client.query(selectContractForUpdate(), [
         instrumentId,

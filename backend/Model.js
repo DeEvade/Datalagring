@@ -1,7 +1,7 @@
 const unrent = async (instrumentId, integration) => {
   return integration.wrapInTransaction(async (client) => {
     try {
-      const contractResult = await integration.getContract(
+      const contractResult = await integration.readContract(
         instrumentId,
         client
       );

@@ -1,5 +1,5 @@
 const express = require("express");
-const { listInstruments } = require("./templates");
+const { listInstruments } = require("./view");
 const { unrent } = require("./Model");
 
 const dotenv = require("dotenv");
@@ -14,13 +14,14 @@ dotenv.config();
 const port = 8080;
 
 app.get("/", async (req, res) => {
-  const response = await integration.test();
-  res.send("hello world" + JSON.stringify(response));
+  // const response = await integration.test();
+  // res.send("hello world" + JSON.stringify(response));
+  res.send("It works");
 });
 
 app.get("/listInstruments", async (req, res) => {
   //const queryString = constructListInstrumentsQuery();
-  const response = await integration.listInstrument();
+  const response = await integration.readInstrument();
   const website = listInstruments(response);
 
   res.send(website);
