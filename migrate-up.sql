@@ -44,7 +44,7 @@ CREATE TABLE "sibling"(
 
 CREATE TABLE "instrument_type"(
   "name" VARCHAR(256) PRIMARY KEY NOT NULL,
-  "max_rent_month" INT NOT NULL
+  "max_rent_month" INT NOT NULL DEFAULT 12
   );
 
 CREATE TABLE "instrument"(
